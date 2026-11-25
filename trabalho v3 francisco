@@ -1,0 +1,6071 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Inteligência Artificial no mercado de trabalho: oportunidade de inovação ou ameaça aos empregos do futuro? Um super site completo, com dados, análises, quiz interativo e muito mais." />
+<meta name="author" content="Observatório de Tecnologia e Trabalho" />
+<meta name="theme-color" content="#0a0e1a" />
+<meta property="og:title" content="IA no Mercado de Trabalho — Oportunidade ou Ameaça?" />
+<meta property="og:description" content="Análise completa sobre o impacto da Inteligência Artificial nas profissões do futuro." />
+<meta property="og:type" content="website" />
+<title>IA no Mercado de Trabalho — Oportunidade ou Ameaça aos Empregos do Futuro?</title>
+
+<!-- Favicon em SVG inline -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0e1a'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%2300d4ff' font-family='monospace'%3EIA%3C/text%3E%3C/svg%3E" />
+
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ==========================================================================
+   1. VARIÁVEIS E RESET
+   ========================================================================== */
+:root {
+  /* Paleta principal */
+  --c-bg:            #0a0e1a;
+  --c-bg-alt:        #0f1523;
+  --c-bg-soft:       #131b2c;
+  --c-surface:       #16203a;
+  --c-surface-2:     #1b2743;
+  --c-border:        rgba(255, 255, 255, 0.08);
+  --c-border-strong: rgba(255, 255, 255, 0.16);
+
+  /* Cores de destaque */
+  --c-primary:       #00d4ff;
+  --c-primary-dark:  #0095c9;
+  --c-primary-glow:  rgba(0, 212, 255, 0.35);
+  --c-secondary:     #7c5cff;
+  --c-secondary-glow:rgba(124, 92, 255, 0.35);
+  --c-accent:        #ff4d8d;
+  --c-success:       #2ce08a;
+  --c-warning:       #ffb020;
+  --c-danger:        #ff5252;
+
+  /* Texto */
+  --c-text:          #eaf0ff;
+  --c-text-soft:     #b3c0d8;
+  --c-text-muted:    #7a879e;
+
+  /* Gradientes */
+  --grad-primary:    linear-gradient(135deg, #00d4ff 0%, #7c5cff 100%);
+  --grad-secondary:  linear-gradient(135deg, #7c5cff 0%, #ff4d8d 100%);
+  --grad-success:    linear-gradient(135deg, #2ce08a 0%, #00d4ff 100%);
+  --grad-danger:     linear-gradient(135deg, #ff5252 0%, #ff4d8d 100%);
+  --grad-surface:    linear-gradient(180deg, rgba(22,32,58,0.9) 0%, rgba(10,14,26,0.9) 100%);
+  --grad-hero:       radial-gradient(ellipse at 20% 20%, rgba(0,212,255,0.18), transparent 55%),
+                     radial-gradient(ellipse at 80% 30%, rgba(124,92,255,0.20), transparent 55%),
+                     radial-gradient(ellipse at 50% 100%, rgba(255,77,141,0.12), transparent 60%);
+
+  /* Sombras */
+  --shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md:  0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg:  0 20px 50px rgba(0, 0, 0, 0.45);
+  --shadow-glow:0 0 40px rgba(0, 212, 255, 0.25);
+
+  /* Layout */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  --container: 1240px;
+  --nav-h: 78px;
+
+  /* Tipografia */
+  --f-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --f-head: 'Space Grotesk', 'Inter', sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Transições */
+  --t-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --t-med:  0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  --t-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Tema claro */
+[data-theme="light"] {
+  --c-bg:            #f4f7fc;
+  --c-bg-alt:        #eaf0fa;
+  --c-bg-soft:       #ffffff;
+  --c-surface:       #ffffff;
+  --c-surface-2:     #eef3fb;
+  --c-border:        rgba(10, 20, 45, 0.09);
+  --c-border-strong: rgba(10, 20, 45, 0.18);
+
+  --c-text:          #0b1225;
+  --c-text-soft:     #3c4a63;
+  --c-text-muted:    #6b7a94;
+
+  --c-primary:       #0089c4;
+  --c-primary-dark:  #006a99;
+  --c-primary-glow:  rgba(0, 137, 196, 0.22);
+  --c-secondary:     #5b3fd6;
+  --c-secondary-glow:rgba(91, 63, 214, 0.22);
+  --c-accent:        #e02b6f;
+
+  --grad-hero:       radial-gradient(ellipse at 20% 20%, rgba(0,137,196,0.14), transparent 55%),
+                     radial-gradient(ellipse at 80% 30%, rgba(91,63,214,0.14), transparent 55%),
+                     radial-gradient(ellipse at 50% 100%, rgba(224,43,111,0.10), transparent 60%);
+
+  --shadow-sm:  0 2px 8px rgba(10, 25, 60, 0.08);
+  --shadow-md:  0 8px 24px rgba(10, 25, 60, 0.10);
+  --shadow-lg:  0 20px 50px rgba(10, 25, 60, 0.14);
+  --shadow-glow:0 0 40px rgba(0, 137, 196, 0.18);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--f-body);
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.72;
+  font-size: 16.5px;
+  overflow-x: hidden;
+  transition: background-color var(--t-med), color var(--t-med);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+::selection {
+  background: var(--c-primary);
+  color: #04121c;
+}
+
+/* Barra de rolagem personalizada */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--c-primary), var(--c-secondary));
+  border-radius: 10px;
+  border: 2px solid var(--c-bg-alt);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--c-secondary), var(--c-accent));
+}
+
+/* ==========================================================================
+   2. UTILITÁRIOS
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section {
+  position: relative;
+  padding-block: 110px;
+}
+
+.section--tight {
+  padding-block: 70px;
+}
+
+.section--alt {
+  background: var(--c-bg-alt);
+}
+
+.section-head {
+  max-width: 800px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.section-head--left {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.22);
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 22px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  box-shadow: 0 0 12px var(--c-primary);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.35; transform: scale(0.75); }
+}
+
+.section-title {
+  font-family: var(--f-head);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.section-sub {
+  font-size: 1.06rem;
+  color: var(--c-text-soft);
+  line-height: 1.8;
+}
+
+.grad-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.grad-text--warm {
+  background: var(--grad-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.grad-text--success {
+  background: var(--grad-success);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.grad-text--danger {
+  background: var(--grad-danger);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--f-head);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 14px 30px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  transition: transform var(--t-fast), box-shadow var(--t-fast),
+              background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform var(--t-fast);
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
+
+.btn--primary {
+  background: var(--grad-primary);
+  color: #04121c;
+  box-shadow: 0 8px 26px rgba(0, 212, 255, 0.28);
+}
+
+.btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 212, 255, 0.42);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--c-border-strong);
+  color: var(--c-text);
+}
+
+.btn--ghost:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.14);
+}
+
+.btn--sm {
+  padding: 10px 22px;
+  font-size: 0.86rem;
+}
+
+.btn--lg {
+  padding: 17px 38px;
+  font-size: 1.02rem;
+}
+
+/* Cards genéricos */
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 34px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--t-med), border-color var(--t-med),
+              box-shadow var(--t-med), background var(--t-med);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.06), transparent 55%);
+  opacity: 0;
+  transition: opacity var(--t-med);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--c-border-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Revelação no scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--left  { transform: translateX(-46px); }
+.reveal--right { transform: translateX(46px); }
+.reveal--zoom  { transform: scale(0.92); }
+
+.reveal--left.is-visible,
+.reveal--right.is-visible,
+.reveal--zoom.is-visible {
+  transform: none;
+}
+
+/* Atrasos escalonados */
+.d-1 { transition-delay: 0.08s; }
+.d-2 { transition-delay: 0.16s; }
+.d-3 { transition-delay: 0.24s; }
+.d-4 { transition-delay: 0.32s; }
+.d-5 { transition-delay: 0.40s; }
+.d-6 { transition-delay: 0.48s; }
+.d-7 { transition-delay: 0.56s; }
+.d-8 { transition-delay: 0.64s; }
+
+/* ==========================================================================
+   3. PRELOADER
+   ========================================================================== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  background: var(--c-bg);
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-orb {
+  width: 92px;
+  height: 92px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.loader-orb::before,
+.loader-orb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.loader-orb::before {
+  border-top-color: var(--c-primary);
+  border-right-color: var(--c-primary);
+  animation: spin 1.1s linear infinite;
+}
+
+.loader-orb::after {
+  inset: 14px;
+  border-bottom-color: var(--c-secondary);
+  border-left-color: var(--c-secondary);
+  animation: spin 1.6s linear infinite reverse;
+}
+
+.loader-core {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  box-shadow: 0 0 34px var(--c-primary-glow);
+  animation: corePulse 1.3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes corePulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%      { transform: scale(0.7); opacity: 0.55; }
+}
+
+.loader-text {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+
+.loader-bar {
+  width: 210px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--c-surface-2);
+  overflow: hidden;
+}
+
+.loader-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--grad-primary);
+  border-radius: 3px;
+  transition: width 0.25s ease;
+}
+
+/* ==========================================================================
+   4. BARRA DE PROGRESSO + CURSOR
+   ========================================================================== */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--grad-primary);
+  z-index: 9998;
+  box-shadow: 0 0 14px var(--c-primary-glow);
+  transition: width 0.1s linear;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--c-primary);
+  box-shadow: 0 0 12px var(--c-primary);
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(0, 212, 255, 0.55);
+  transition: width 0.22s ease, height 0.22s ease,
+              border-color 0.22s ease, background 0.22s ease;
+}
+
+.cursor-ring.is-hover {
+  width: 58px;
+  height: 58px;
+  border-color: var(--c-secondary);
+  background: rgba(124, 92, 255, 0.10);
+}
+
+@media (hover: none), (max-width: 900px) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ==========================================================================
+   5. NAVEGAÇÃO
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  transition: background var(--t-med), backdrop-filter var(--t-med),
+              box-shadow var(--t-med), height var(--t-med), border-color var(--t-med);
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+  height: 66px;
+  background: rgba(10, 14, 26, 0.82);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom-color: var(--c-border);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 10px 34px rgba(10, 25, 60, 0.10);
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 1.06rem;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--grad-primary);
+  display: grid;
+  place-items: center;
+  font-family: var(--f-mono);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: #04121c;
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-mark::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%);
+  animation: shineSweep 4.5s ease-in-out infinite;
+}
+
+@keyframes shineSweep {
+  0%, 70%, 100% { transform: translateX(-130%); }
+  85%           { transform: translateX(130%); }
+}
+
+.brand-text small {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-top: -3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 0.895rem;
+  font-weight: 500;
+  color: var(--c-text-soft);
+  padding: 9px 14px;
+  border-radius: var(--radius-pill);
+  transition: color var(--t-fast), background var(--t-fast);
+  white-space: nowrap;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--grad-primary);
+  transform: translateX(-50%);
+  transition: width var(--t-med);
+}
+
+.nav-links a:hover {
+  color: var(--c-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 22px;
+}
+
+.nav-links a.active {
+  color: var(--c-primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text-soft);
+  transition: color var(--t-fast), border-color var(--t-fast),
+              transform var(--t-fast), background var(--t-fast);
+}
+
+.theme-toggle:hover {
+  color: var(--c-primary);
+  border-color: var(--c-primary);
+  transform: rotate(-18deg) scale(1.05);
+}
+
+.theme-toggle svg {
+  width: 19px;
+  height: 19px;
+}
+
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+[data-theme="light"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+.nav-cta {
+  padding: 11px 24px;
+  font-size: 0.86rem;
+}
+
+.hamburger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  place-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 19px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--c-text);
+  transition: transform var(--t-med), opacity var(--t-fast), width var(--t-med);
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Menu mobile */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 8999;
+  background: var(--c-bg);
+  padding: 110px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-14px);
+  transition: opacity var(--t-med), visibility var(--t-med), transform var(--t-med);
+  overflow-y: auto;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  font-family: var(--f-head);
+  font-size: 1.18rem;
+  font-weight: 600;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: border-color var(--t-fast), transform var(--t-fast), color var(--t-fast);
+}
+
+.mobile-menu a:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+  transform: translateX(6px);
+}
+
+.mobile-menu a span.num {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  color: var(--c-text-muted);
+}
+
+/* ==========================================================================
+   6. HERO / BANNER
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-h) + 60px);
+  padding-bottom: 80px;
+  overflow: hidden;
+  background: var(--c-bg);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--grad-hero);
+  z-index: 2;
+}
+
+.hero-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.30;
+  filter: saturate(0.65) contrast(1.08);
+  transform: scale(1.06);
+  animation: heroKenBurns 26s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .hero-bg img {
+  opacity: 0.16;
+}
+
+@keyframes heroKenBurns {
+  0%   { transform: scale(1.06) translate(0, 0); }
+  100% { transform: scale(1.16) translate(-2%, -2%); }
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(180deg,
+    rgba(10, 14, 26, 0.55) 0%,
+    rgba(10, 14, 26, 0.72) 55%,
+    var(--c-bg) 100%);
+}
+
+[data-theme="light"] .hero-bg::after {
+  background: linear-gradient(180deg,
+    rgba(244, 247, 252, 0.55) 0%,
+    rgba(244, 247, 252, 0.80) 55%,
+    var(--c-bg) 100%);
+}
+
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 660px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  background: rgba(0, 212, 255, 0.09);
+  border: 1px solid rgba(0, 212, 255, 0.24);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-badge .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-success);
+  box-shadow: 0 0 10px var(--c-success);
+  animation: pulseDot 1.8s ease-in-out infinite;
+}
+
+.hero-title {
+  font-family: var(--f-head);
+  font-size: clamp(2.3rem, 5.4vw, 4.15rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.032em;
+  margin-bottom: 26px;
+}
+
+.hero-title .line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-title .line > span {
+  display: inline-block;
+  animation: riseIn 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-title .line:nth-child(1) > span { animation-delay: 0.10s; }
+.hero-title .line:nth-child(2) > span { animation-delay: 0.22s; }
+.hero-title .line:nth-child(3) > span { animation-delay: 0.34s; }
+
+@keyframes riseIn {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.hero-typing {
+  display: block;
+  min-height: 1.2em;
+  font-family: var(--f-mono);
+  font-size: clamp(0.95rem, 1.9vw, 1.22rem);
+  font-weight: 500;
+  color: var(--c-primary);
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+}
+
+.hero-typing .caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  background: var(--c-primary);
+  vertical-align: -0.15em;
+  margin-left: 3px;
+  animation: caretBlink 1s steps(2) infinite;
+}
+
+@keyframes caretBlink {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.hero-desc {
+  font-size: 1.075rem;
+  color: var(--c-text-soft);
+  line-height: 1.82;
+  margin-bottom: 38px;
+  max-width: 570px;
+  animation: riseIn 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.46s both;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 52px;
+  animation: riseIn 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  max-width: 560px;
+  animation: riseIn 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.70s both;
+}
+
+.hero-stat {
+  background: rgba(22, 32, 58, 0.62);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  transition: border-color var(--t-med), transform var(--t-med), box-shadow var(--t-med);
+}
+
+[data-theme="light"] .hero-stat {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.hero-stat:hover {
+  border-color: var(--c-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 34px rgba(0, 212, 255, 0.16);
+}
+
+.hero-stat .num {
+  font-family: var(--f-head);
+  font-size: 1.72rem;
+  font-weight: 700;
+  line-height: 1.1;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-stat .lbl {
+  display: block;
+  font-size: 0.775rem;
+  color: var(--c-text-muted);
+  line-height: 1.45;
+  margin-top: 5px;
+}
+
+/* Card flutuante do hero */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: riseIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.62s both;
+}
+
+.hero-orb {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.hero-orb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 212, 255, 0.28);
+  animation: spin 34s linear infinite;
+}
+
+.hero-orb::after {
+  content: '';
+  position: absolute;
+  inset: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(124, 92, 255, 0.30);
+  animation: spin 24s linear infinite reverse;
+}
+
+.orb-core {
+  width: 66%;
+  height: 66%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--c-border-strong);
+  box-shadow: 0 0 70px rgba(0, 212, 255, 0.28),
+              inset 0 0 60px rgba(124, 92, 255, 0.22);
+  position: relative;
+}
+
+.orb-core img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: heroKenBurns 20s ease-in-out infinite alternate;
+}
+
+.orb-core::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(0, 212, 255, 0.22), rgba(124, 92, 255, 0.30));
+  mix-blend-mode: screen;
+}
+
+.orbit-chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-pill);
+  background: rgba(22, 32, 58, 0.92);
+  border: 1px solid var(--c-border-strong);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  animation: floatChip 5.5s ease-in-out infinite;
+}
+
+[data-theme="light"] .orbit-chip {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.orbit-chip i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: block;
+}
+
+.orbit-chip.c1 { top: 8%;  left: -4%;  animation-delay: 0s;   }
+.orbit-chip.c2 { top: 30%; right: -8%; animation-delay: 0.9s; }
+.orbit-chip.c3 { bottom: 24%; left: -8%; animation-delay: 1.8s; }
+.orbit-chip.c4 { bottom: 6%; right: 2%; animation-delay: 2.6s; }
+
+.orbit-chip.c1 i { background: var(--c-success); box-shadow: 0 0 10px var(--c-success); }
+.orbit-chip.c2 i { background: var(--c-primary); box-shadow: 0 0 10px var(--c-primary); }
+.orbit-chip.c3 i { background: var(--c-warning); box-shadow: 0 0 10px var(--c-warning); }
+.orbit-chip.c4 i { background: var(--c-accent);  box-shadow: 0 0 10px var(--c-accent); }
+
+@keyframes floatChip {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-13px); }
+}
+
+/* Indicador de scroll */
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  animation: fadeInUp 1.4s ease 1.4s both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate(-50%, 16px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.scroll-mouse {
+  width: 24px;
+  height: 38px;
+  border: 1.5px solid var(--c-border-strong);
+  border-radius: var(--radius-pill);
+  position: relative;
+}
+
+.scroll-mouse::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 3px;
+  height: 8px;
+  border-radius: 3px;
+  background: var(--c-primary);
+  transform: translateX(-50%);
+  animation: mouseWheel 1.8s ease-in-out infinite;
+}
+
+@keyframes mouseWheel {
+  0%   { opacity: 0; transform: translate(-50%, 0); }
+  35%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 14px); }
+}
+
+/* ==========================================================================
+   7. TICKER / MARQUEE
+   ========================================================================== */
+.ticker {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid var(--c-border);
+  background: var(--c-bg-alt);
+  padding-block: 20px;
+  display: flex;
+  user-select: none;
+}
+
+.ticker::before,
+.ticker::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ticker::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--c-bg-alt), transparent);
+}
+
+.ticker::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--c-bg-alt), transparent);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 54px;
+  animation: tickerScroll 34s linear infinite;
+  flex-shrink: 0;
+  padding-right: 54px;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--f-mono);
+  font-size: 0.83rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  white-space: nowrap;
+}
+
+.ticker-item svg {
+  width: 15px;
+  height: 15px;
+  color: var(--c-primary);
+  flex-shrink: 0;
+}
+
+.ticker-item strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   8. SEÇÃO: O QUE É IA
+   ========================================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-img-wrap {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--c-border-strong);
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 4.4;
+}
+
+.about-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-img-wrap:hover img {
+  transform: scale(1.07);
+}
+
+.about-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(10, 14, 26, 0.86) 100%);
+}
+
+.about-img-caption {
+  position: absolute;
+  bottom: 26px;
+  left: 26px;
+  right: 26px;
+  z-index: 2;
+}
+
+.about-img-caption h4 {
+  font-family: var(--f-head);
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: #eaf0ff;
+  margin-bottom: 4px;
+}
+
+.about-img-caption p {
+  font-size: 0.83rem;
+  color: rgba(234, 240, 255, 0.66);
+  line-height: 1.5;
+}
+
+.about-float-card {
+  position: absolute;
+  right: -22px;
+  top: 42px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: floatChip 6s ease-in-out infinite;
+  z-index: 3;
+}
+
+.about-float-card .ic {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: var(--grad-primary);
+  display: grid;
+  place-items: center;
+  color: #04121c;
+  flex-shrink: 0;
+}
+
+.about-float-card .ic svg { width: 20px; height: 20px; }
+
+.about-float-card strong {
+  display: block;
+  font-family: var(--f-head);
+  font-size: 1.16rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.about-float-card span {
+  font-size: 0.74rem;
+  color: var(--c-text-muted);
+}
+
+.about-text p {
+  color: var(--c-text-soft);
+  margin-bottom: 20px;
+  line-height: 1.86;
+}
+
+.about-text p strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+
+.about-callout {
+  margin-top: 30px;
+  padding: 22px 26px;
+  border-left: 3px solid var(--c-primary);
+  background: rgba(0, 212, 255, 0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 0.95rem;
+  color: var(--c-text-soft);
+  line-height: 1.78;
+}
+
+.about-callout strong { color: var(--c-primary); }
+
+.mini-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.mini-feature {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  transition: border-color var(--t-med), transform var(--t-med);
+}
+
+.mini-feature:hover {
+  border-color: var(--c-primary);
+  transform: translateY(-4px);
+}
+
+.mini-feature svg {
+  width: 19px;
+  height: 19px;
+  color: var(--c-primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.mini-feature b {
+  display: block;
+  font-family: var(--f-head);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.mini-feature span {
+  font-size: 0.79rem;
+  color: var(--c-text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   9. SEÇÃO: COMO FUNCIONA (PASSOS)
+   ========================================================================== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  position: relative;
+}
+
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 62px;
+  left: 16%;
+  right: 16%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-border-strong), transparent);
+  z-index: 0;
+}
+
+.step-card {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 28px 34px;
+}
+
+.step-num {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--f-head);
+  font-size: 1.22rem;
+  font-weight: 700;
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border-strong);
+  color: var(--c-primary);
+  position: relative;
+  transition: background var(--t-med), color var(--t-med), transform var(--t-med);
+}
+
+.step-card:hover .step-num {
+  background: var(--grad-primary);
+  color: #04121c;
+  transform: scale(1.08) rotate(-6deg);
+}
+
+.step-card h3 {
+  font-family: var(--f-head);
+  font-size: 1.16rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.step-card p {
+  font-size: 0.92rem;
+  color: var(--c-text-soft);
+  line-height: 1.76;
+}
+
+/* Abas interativas */
+.tabs {
+  margin-top: 56px;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+.tab-btn {
+  padding: 11px 24px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text-soft);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--t-fast);
+}
+
+.tab-btn:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
+
+.tab-btn.active {
+  background: var(--grad-primary);
+  border-color: transparent;
+  color: #04121c;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.28);
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeSlide 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tab-panel-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: center;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  padding: 44px;
+}
+
+.tab-panel-inner img {
+  border-radius: var(--radius-lg);
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  width: 100%;
+  border: 1px solid var(--c-border);
+}
+
+.tab-panel-inner h3 {
+  font-family: var(--f-head);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.tab-panel-inner p {
+  color: var(--c-text-soft);
+  font-size: 0.96rem;
+  line-height: 1.82;
+  margin-bottom: 20px;
+}
+
+.tab-list li {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--c-text-soft);
+  padding: 8px 0;
+  line-height: 1.62;
+}
+
+.tab-list li svg {
+  width: 17px;
+  height: 17px;
+  color: var(--c-success);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ==========================================================================
+   10. SEÇÃO: OPORTUNIDADES
+   ========================================================================== */
+.opp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.opp-card {
+  padding: 36px 30px;
+}
+
+.opp-card .icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  background: rgba(0, 212, 255, 0.10);
+  border: 1px solid rgba(0, 212, 255, 0.24);
+  color: var(--c-primary);
+  transition: transform var(--t-med), background var(--t-med), color var(--t-med);
+}
+
+.opp-card:hover .icon-box {
+  transform: rotate(-8deg) scale(1.08);
+  background: var(--grad-primary);
+  color: #04121c;
+  border-color: transparent;
+}
+
+.opp-card .icon-box svg {
+  width: 26px;
+  height: 26px;
+}
+
+.opp-card h3 {
+  font-family: var(--f-head);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-bottom: 11px;
+}
+
+.opp-card p {
+  font-size: 0.91rem;
+  color: var(--c-text-soft);
+  line-height: 1.78;
+}
+
+.opp-tag {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--f-mono);
+  font-size: 0.71rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-success);
+  background: rgba(44, 224, 138, 0.10);
+  border: 1px solid rgba(44, 224, 138, 0.24);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* Faixa com imagem */
+.split-banner {
+  margin-top: 60px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--c-border-strong);
+  background: var(--c-surface);
+}
+
+.split-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 340px;
+}
+
+.split-banner-content {
+  padding: 54px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split-banner-content h3 {
+  font-family: var(--f-head);
+  font-size: 1.68rem;
+  font-weight: 600;
+  line-height: 1.24;
+  margin-bottom: 16px;
+}
+
+.split-banner-content p {
+  color: var(--c-text-soft);
+  font-size: 0.96rem;
+  line-height: 1.82;
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   11. SEÇÃO: AMEAÇAS
+   ========================================================================== */
+.threat-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.threat-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 82, 82, 0.10), transparent 68%);
+  pointer-events: none;
+}
+
+.threat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.threat-card {
+  display: flex;
+  gap: 22px;
+  padding: 32px 30px;
+  border-left: 3px solid transparent;
+  transition: border-color var(--t-med), transform var(--t-med),
+              background var(--t-med), box-shadow var(--t-med);
+}
+
+.threat-card:hover {
+  border-left-color: var(--c-danger);
+  transform: translateX(6px);
+  background: var(--c-surface-2);
+  box-shadow: var(--shadow-md);
+}
+
+.threat-card .t-ic {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 82, 82, 0.10);
+  border: 1px solid rgba(255, 82, 82, 0.24);
+  color: var(--c-danger);
+}
+
+.threat-card .t-ic svg {
+  width: 22px;
+  height: 22px;
+}
+
+.threat-card h3 {
+  font-family: var(--f-head);
+  font-size: 1.06rem;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.threat-card p {
+  font-size: 0.90rem;
+  color: var(--c-text-soft);
+  line-height: 1.76;
+}
+
+/* Gráfico */
+.chart-wrap {
+  margin-top: 60px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+}
+
+.chart-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.chart-header h3 {
+  font-family: var(--f-head);
+  font-size: 1.22rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.chart-header p {
+  font-size: 0.83rem;
+  color: var(--c-text-muted);
+}
+
+.chart-legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--c-text-soft);
+}
+
+.chart-legend i {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  display: block;
+}
+
+.chart-canvas-box {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.chart-canvas-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================================================
+   12. COMPARATIVO
+   ========================================================================== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--c-border-strong);
+}
+
+.compare-col {
+  padding: 46px 40px;
+  background: var(--c-surface);
+}
+
+.compare-col.pros {
+  background: linear-gradient(160deg, rgba(44, 224, 138, 0.09), var(--c-surface) 62%);
+}
+
+.compare-col.cons {
+  background: linear-gradient(160deg, rgba(255, 82, 82, 0.09), var(--c-surface) 62%);
+}
+
+.compare-col h3 {
+  font-family: var(--f-head);
+  font-size: 1.34rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.compare-col h3 .badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+}
+
+.compare-col.pros h3 .badge {
+  background: rgba(44, 224, 138, 0.14);
+  border: 1px solid rgba(44, 224, 138, 0.30);
+  color: var(--c-success);
+}
+
+.compare-col.cons h3 .badge {
+  background: rgba(255, 82, 82, 0.14);
+  border: 1px solid rgba(255, 82, 82, 0.30);
+  color: var(--c-danger);
+}
+
+.compare-col h3 .badge svg { width: 20px; height: 20px; }
+
+.compare-col > p {
+  font-size: 0.86rem;
+  color: var(--c-text-muted);
+  margin-bottom: 26px;
+}
+
+.compare-col ul li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--c-border);
+  font-size: 0.91rem;
+  color: var(--c-text-soft);
+  line-height: 1.66;
+}
+
+.compare-col ul li:last-child {
+  border-bottom: none;
+}
+
+.compare-col ul li svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.compare-col.pros ul li svg { color: var(--c-success); }
+.compare-col.cons ul li svg { color: var(--c-danger); }
+
+.compare-vs {
+  display: grid;
+  place-items: center;
+  padding: 0 22px;
+  background: var(--c-bg-alt);
+  position: relative;
+}
+
+.compare-vs span {
+  font-family: var(--f-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--grad-primary);
+  color: #04121c;
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.30);
+}
+
+/* ==========================================================================
+   13. PROFISSIONAL DO FUTURO
+   ========================================================================== */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.skills-visual {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--c-border-strong);
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 3 / 3.5;
+}
+
+.skills-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skills-visual:hover img {
+  transform: scale(1.06);
+}
+
+.skills-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 14, 26, 0.90) 100%);
+}
+
+.skills-badge {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+  z-index: 2;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.skills-badge span {
+  font-family: var(--f-mono);
+  font-size: 0.73rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 212, 255, 0.16);
+  border: 1px solid rgba(0, 212, 255, 0.34);
+  color: #bfeaff;
+  backdrop-filter: blur(8px);
+}
+
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 34px;
+}
+
+.skill-bar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.skill-bar-head b {
+  font-family: var(--f-head);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.skill-bar-head span {
+  font-family: var(--f-mono);
+  font-size: 0.82rem;
+  color: var(--c-primary);
+  font-weight: 500;
+}
+
+.skill-track {
+  height: 9px;
+  border-radius: var(--radius-pill);
+  background: var(--c-surface-2);
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  border-radius: var(--radius-pill);
+  background: var(--grad-primary);
+  transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+.skill-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.42), transparent);
+  animation: shimmer 2.4s linear infinite;
+}
+
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+.skill-fill.warm  { background: var(--grad-secondary); }
+.skill-fill.green { background: var(--grad-success); }
+
+/* Cards de competências */
+.skills-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 68px;
+}
+
+.skill-card {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.skill-card .s-ic {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border);
+  color: var(--c-primary);
+  transition: all var(--t-med);
+}
+
+.skill-card:hover .s-ic {
+  background: var(--grad-primary);
+  color: #04121c;
+  transform: translateY(-5px) rotate(6deg);
+  border-color: transparent;
+}
+
+.skill-card .s-ic svg { width: 24px; height: 24px; }
+
+.skill-card h4 {
+  font-family: var(--f-head);
+  font-size: 0.96rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.skill-card p {
+  font-size: 0.79rem;
+  color: var(--c-text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   14. TIMELINE
+   ========================================================================== */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin-inline: auto;
+  padding-left: 46px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg,
+    var(--c-primary) 0%,
+    var(--c-secondary) 50%,
+    var(--c-accent) 100%);
+  opacity: 0.42;
+  border-radius: 2px;
+}
+
+.tl-item {
+  position: relative;
+  padding-bottom: 46px;
+}
+
+.tl-item:last-child {
+  padding-bottom: 0;
+}
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--c-bg);
+  border: 2.5px solid var(--c-primary);
+  box-shadow: 0 0 0 5px rgba(0, 212, 255, 0.10);
+  transition: transform var(--t-med), box-shadow var(--t-med);
+}
+
+.tl-item:hover::before {
+  transform: scale(1.28);
+  box-shadow: 0 0 0 9px rgba(0, 212, 255, 0.16);
+}
+
+.tl-year {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--c-primary);
+  background: rgba(0, 212, 255, 0.10);
+  border: 1px solid rgba(0, 212, 255, 0.24);
+  padding: 4px 13px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 11px;
+}
+
+.tl-item h4 {
+  font-family: var(--f-head);
+  font-size: 1.13rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tl-item p {
+  font-size: 0.91rem;
+  color: var(--c-text-soft);
+  line-height: 1.76;
+}
+
+/* ==========================================================================
+   15. SETORES
+   ========================================================================== */
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sector-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  transition: transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med);
+}
+
+.sector-card:hover {
+  transform: translateY(-9px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--c-primary);
+}
+
+.sector-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sector-card:hover img {
+  transform: scale(1.10);
+}
+
+.sector-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10, 14, 26, 0.10) 0%,
+    rgba(10, 14, 26, 0.62) 52%,
+    rgba(10, 14, 26, 0.95) 100%);
+}
+
+.sector-body {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 26px 22px;
+  z-index: 2;
+}
+
+.sector-body .sector-ic {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 212, 255, 0.18);
+  border: 1px solid rgba(0, 212, 255, 0.36);
+  color: #9fe6ff;
+  margin-bottom: 13px;
+  backdrop-filter: blur(8px);
+  transition: background var(--t-med), color var(--t-med);
+}
+
+.sector-card:hover .sector-ic {
+  background: var(--grad-primary);
+  color: #04121c;
+}
+
+.sector-body .sector-ic svg { width: 21px; height: 21px; }
+
+.sector-body h4 {
+  font-family: var(--f-head);
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: #eaf0ff;
+  margin-bottom: 7px;
+}
+
+.sector-body p {
+  font-size: 0.82rem;
+  color: rgba(234, 240, 255, 0.74);
+  line-height: 1.62;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height var(--t-slow), opacity var(--t-med), margin var(--t-med);
+}
+
+.sector-card:hover .sector-body p {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   16. RESPONSABILIDADES
+   ========================================================================== */
+.resp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.resp-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.resp-img {
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+}
+
+.resp-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.resp-card:hover .resp-img img {
+  transform: scale(1.09);
+}
+
+.resp-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, var(--c-surface) 100%);
+}
+
+.resp-body {
+  padding: 0 30px 34px;
+  position: relative;
+  margin-top: -30px;
+  z-index: 2;
+}
+
+.resp-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: var(--grad-primary);
+  color: #04121c;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 28px rgba(0, 212, 255, 0.30);
+}
+
+.resp-badge svg { width: 25px; height: 25px; }
+
+.resp-body h3 {
+  font-family: var(--f-head);
+  font-size: 1.16rem;
+  font-weight: 600;
+  margin-bottom: 11px;
+}
+
+.resp-body p {
+  font-size: 0.90rem;
+  color: var(--c-text-soft);
+  line-height: 1.78;
+  margin-bottom: 18px;
+}
+
+.resp-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  color: var(--c-text-muted);
+  padding: 6px 0;
+  line-height: 1.6;
+}
+
+.resp-list li svg {
+  width: 15px;
+  height: 15px;
+  color: var(--c-primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ==========================================================================
+   17. ESTATÍSTICAS / NÚMEROS
+   ========================================================================== */
+.stats-band {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(124, 92, 255, 0.08));
+  border-block: 1px solid var(--c-border);
+  padding-block: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 78%);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-block {
+  text-align: center;
+  padding: 26px 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-border);
+  background: rgba(22, 32, 58, 0.42);
+  backdrop-filter: blur(10px);
+  transition: transform var(--t-med), border-color var(--t-med), box-shadow var(--t-med);
+}
+
+[data-theme="light"] .stat-block {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.stat-block:hover {
+  transform: translateY(-7px);
+  border-color: var(--c-primary);
+  box-shadow: 0 16px 40px rgba(0, 212, 255, 0.16);
+}
+
+.stat-num {
+  font-family: var(--f-head);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 9px;
+}
+
+.stat-num sup {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+.stat-lbl {
+  font-size: 0.855rem;
+  color: var(--c-text-soft);
+  line-height: 1.55;
+}
+
+.stat-src {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--c-text-muted);
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   18. QUIZ
+   ========================================================================== */
+.quiz-box {
+  max-width: 820px;
+  margin-inline: auto;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-box::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.18), transparent 68%);
+  pointer-events: none;
+}
+
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-progress-track {
+  flex: 1;
+  height: 7px;
+  border-radius: var(--radius-pill);
+  background: var(--c-surface-2);
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: var(--radius-pill);
+  background: var(--grad-primary);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quiz-progress-label {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  color: var(--c-text-muted);
+  white-space: nowrap;
+}
+
+.quiz-question {
+  font-family: var(--f-head);
+  font-size: 1.24rem;
+  font-weight: 600;
+  line-height: 1.42;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+  min-height: 58px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border);
+  background: var(--c-bg-alt);
+  font-size: 0.94rem;
+  text-align: left;
+  color: var(--c-text-soft);
+  transition: all var(--t-fast);
+  line-height: 1.5;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--c-primary);
+  background: rgba(0, 212, 255, 0.07);
+  color: var(--c-text);
+  transform: translateX(5px);
+}
+
+.quiz-option .letter {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--c-surface-2);
+  color: var(--c-text-muted);
+  flex-shrink: 0;
+  transition: all var(--t-fast);
+}
+
+.quiz-option:hover:not(:disabled) .letter {
+  background: var(--grad-primary);
+  color: #04121c;
+}
+
+.quiz-option.correct {
+  border-color: var(--c-success);
+  background: rgba(44, 224, 138, 0.10);
+  color: var(--c-text);
+}
+
+.quiz-option.correct .letter {
+  background: var(--c-success);
+  color: #04121c;
+}
+
+.quiz-option.wrong {
+  border-color: var(--c-danger);
+  background: rgba(255, 82, 82, 0.10);
+  color: var(--c-text);
+}
+
+.quiz-option.wrong .letter {
+  background: var(--c-danger);
+  color: #fff;
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-footer {
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-feedback {
+  font-size: 0.88rem;
+  color: var(--c-text-soft);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.quiz-result {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-result .score-ring {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: conic-gradient(var(--c-primary) 0deg, var(--c-surface-2) 0deg);
+  transition: background 1s ease;
+}
+
+.quiz-result .score-ring::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: var(--c-surface);
+}
+
+.quiz-result .score-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.quiz-result .score-inner b {
+  display: block;
+  font-family: var(--f-head);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.quiz-result .score-inner span {
+  font-size: 0.74rem;
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--f-mono);
+}
+
+.quiz-result h3 {
+  font-family: var(--f-head);
+  font-size: 1.42rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.quiz-result p {
+  color: var(--c-text-soft);
+  font-size: 0.96rem;
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0 auto 26px;
+}
+
+/* ==========================================================================
+   19. FAQ
+   ========================================================================== */
+.faq-list {
+  max-width: 900px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  background: var(--c-surface);
+  overflow: hidden;
+  transition: border-color var(--t-med), background var(--t-med);
+}
+
+.faq-item.open {
+  border-color: var(--c-primary);
+  background: var(--c-surface-2);
+}
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  text-align: left;
+  font-family: var(--f-head);
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: var(--c-text);
+  transition: color var(--t-fast);
+}
+
+.faq-q:hover {
+  color: var(--c-primary);
+}
+
+.faq-q .faq-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border);
+  flex-shrink: 0;
+  transition: all var(--t-med);
+  position: relative;
+}
+
+.faq-q .faq-icon::before,
+.faq-q .faq-icon::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform var(--t-med), opacity var(--t-fast);
+}
+
+.faq-q .faq-icon::before {
+  width: 12px;
+  height: 2px;
+}
+
+.faq-q .faq-icon::after {
+  width: 2px;
+  height: 12px;
+}
+
+.faq-item.open .faq-icon {
+  background: var(--grad-primary);
+  color: #04121c;
+  border-color: transparent;
+  transform: rotate(180deg);
+}
+
+.faq-item.open .faq-icon::after {
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-a-inner {
+  padding: 0 26px 24px;
+  font-size: 0.93rem;
+  color: var(--c-text-soft);
+  line-height: 1.84;
+}
+
+/* ==========================================================================
+   20. CONCLUSÃO / CTA
+   ========================================================================== */
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  padding-block: 120px;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--grad-hero);
+  z-index: 0;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 30%, rgba(0,212,255,0.10) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgba(124,92,255,0.10) 0 1px, transparent 1px);
+  background-size: 90px 90px, 120px 120px;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cta-quote {
+  font-family: var(--f-head);
+  font-size: clamp(1.4rem, 3.1vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.42;
+  letter-spacing: -0.018em;
+  margin-bottom: 34px;
+}
+
+.cta-quote .hl {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   21. FOOTER
+   ========================================================================== */
+.footer {
+  background: var(--c-bg-alt);
+  border-top: 1px solid var(--c-border);
+  padding-top: 72px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 54px;
+}
+
+.footer-brand p {
+  font-size: 0.90rem;
+  color: var(--c-text-muted);
+  line-height: 1.78;
+  margin-top: 18px;
+  max-width: 320px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text-muted);
+  transition: all var(--t-fast);
+}
+
+.footer-social a:hover {
+  color: var(--c-primary);
+  border-color: var(--c-primary);
+  transform: translateY(-4px);
+}
+
+.footer-social a svg { width: 18px; height: 18px; }
+
+.footer-col h5 {
+  font-family: var(--f-head);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text);
+  margin-bottom: 20px;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  font-size: 0.89rem;
+  color: var(--c-text-muted);
+  transition: color var(--t-fast), padding-left var(--t-fast);
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: var(--c-primary);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--c-border);
+  padding-block: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  font-size: 0.83rem;
+  color: var(--c-text-muted);
+}
+
+.footer-bottom p strong {
+  color: var(--c-text-soft);
+  font-weight: 600;
+}
+
+.footer-bottom .made {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--f-mono);
+  font-size: 0.76rem;
+  color: var(--c-text-muted);
+}
+
+.footer-bottom .made svg {
+  width: 14px;
+  height: 14px;
+  color: var(--c-accent);
+  animation: heartBeat 1.6s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.22); }
+}
+
+/* ==========================================================================
+   22. BOTÃO VOLTAR AO TOPO
+   ========================================================================== */
+#back-to-top {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--grad-primary);
+  color: #04121c;
+  box-shadow: 0 10px 32px rgba(0, 212, 255, 0.34);
+  z-index: 8000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(22px);
+  transition: all var(--t-med);
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  transform: translateY(-5px) scale(1.06);
+  box-shadow: 0 16px 42px rgba(0, 212, 255, 0.48);
+}
+
+#back-to-top svg {
+  width: 21px;
+  height: 21px;
+}
+
+/* ==========================================================================
+   23. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 1180px) {
+  .nav-links { gap: 0; }
+  .nav-links a { padding: 9px 10px; font-size: 0.845rem; }
+}
+
+@media (max-width: 1080px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-cta { display: none; }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-visual {
+    order: -1;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+
+  .hero-content { max-width: 100%; }
+
+  .about-grid,
+  .skills-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-float-card { right: 12px; }
+
+  .steps-grid,
+  .opp-grid,
+  .resp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid::before { display: none; }
+
+  .skills-cards,
+  .sector-grid,
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-vs {
+    padding: 22px 0;
+  }
+
+  .split-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .split-banner img { min-height: 260px; }
+
+  .tab-panel-inner {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 38px;
+  }
+}
+
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+
+  .section { padding-block: 74px; }
+
+  .hero { min-height: auto; padding-top: 130px; padding-bottom: 70px; }
+
+  .hero-stats { grid-template-columns: 1fr; gap: 10px; }
+  .hero-stat { display: flex; align-items: center; gap: 14px; padding: 14px 18px; }
+  .hero-stat .num { font-size: 1.4rem; }
+  .hero-stat .lbl { margin-top: 0; }
+
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; }
+
+  .scroll-hint { display: none; }
+
+  .threat-grid,
+  .steps-grid,
+  .opp-grid,
+  .resp-grid,
+  .skills-cards,
+  .sector-grid,
+  .stats-grid,
+  .mini-features {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-wrap { padding: 26px 18px; }
+  .chart-canvas-box { height: 260px; }
+
+  .quiz-box { padding: 28px 22px; }
+  .quiz-question { font-size: 1.08rem; }
+
+  .compare-col { padding: 32px 24px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .about-float-card { display: none; }
+
+  .timeline { padding-left: 34px; }
+  .tl-item::before { left: -30px; }
+
+  #back-to-top { right: 16px; bottom: 16px; width: 46px; height: 46px; }
+
+  .ticker::before, .ticker::after { width: 60px; }
+}
+
+@media (max-width: 460px) {
+  .container { padding-inline: 18px; }
+  .brand-text small { display: none; }
+  .card { padding: 26px 22px; }
+  .step-card { padding: 30px 22px; }
+  .tab-buttons { gap: 8px; }
+  .tab-btn { padding: 9px 16px; font-size: 0.82rem; }
+}
+
+/* Acessibilidade: reduzir movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Impressão */
+@media print {
+  .navbar, #back-to-top, .scroll-hint, #preloader,
+  .cursor-dot, .cursor-ring, #scroll-progress, .ticker { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 24px; page-break-inside: avoid; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================================================
+     PRELOADER
+     ========================================================================== -->
+<div id="preloader">
+  <div class="loader-orb">
+    <div class="loader-core"></div>
+  </div>
+  <div class="loader-text">Inicializando IA</div>
+  <div class="loader-bar"><span id="loader-fill"></span></div>
+</div>
+
+<!-- Barra de progresso de leitura -->
+<div id="scroll-progress"></div>
+
+<!-- Cursor personalizado -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ==========================================================================
+     NAVEGAÇÃO
+     ========================================================================== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+
+    <a href="#hero" class="brand">
+      <div class="brand-mark">IA</div>
+      <div class="brand-text">
+        IA &amp; Trabalho
+        <small>Observatório Digital</small>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#o-que-e">O que é</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#oportunidades">Oportunidades</a>
+      <a href="#ameacas">Ameaças</a>
+      <a href="#comparativo">Comparativo</a>
+      <a href="#futuro">Profissional</a>
+      <a href="#setores">Setores</a>
+      <a href="#responsabilidades">Responsáveis</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/escuro">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+
+      <a href="#quiz" class="btn btn--primary nav-cta">
+        Testar conhecimento
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#o-que-e">O que é Inteligência Artificial <span class="num">01</span></a>
+  <a href="#como-funciona">Como ela funciona <span class="num">02</span></a>
+  <a href="#oportunidades">Oportunidades de inovação <span class="num">03</span></a>
+  <a href="#ameacas">Ameaças aos empregos <span class="num">04</span></a>
+  <a href="#comparativo">Comparativo direto <span class="num">05</span></a>
+  <a href="#futuro">O profissional do futuro <span class="num">06</span></a>
+  <a href="#setores">IA nos setores <span class="num">07</span></a>
+  <a href="#responsabilidades">Escolas, empresas e governo <span class="num">08</span></a>
+  <a href="#quiz">Quiz interativo <span class="num">09</span></a>
+  <a href="#faq">Perguntas frequentes <span class="num">10</span></a>
+</div>
+
+<!-- ==========================================================================
+     HERO / BANNER
+     ========================================================================== -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img
+      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1920&q=80"
+      alt="Representação abstrata de inteligência artificial com redes neurais luminosas"
+      fetchpriority="high"
+    />
+  </div>
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="container hero-inner">
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Inteligência Artificial &amp; Mercado de Trabalho
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span>O futuro do trabalho</span></span>
+        <span class="line"><span>está sendo <em class="grad-text" style="font-style:normal;">reescrito</em></span></span>
+        <span class="line"><span>pela Inteligência Artificial.</span></span>
+      </h1>
+
+      <div class="hero-typing">
+        <span id="typing-text"></span><span class="caret"></span>
+      </div>
+
+      <p class="hero-desc">
+        A Inteligência Artificial está transformando profundamente a maneira como as pessoas
+        vivem, estudam e trabalham. Mas afinal: ela representa uma
+        <strong>grande oportunidade de inovação</strong> ou uma
+        <strong>ameaça aos empregos do futuro</strong>? Explore os dois lados dessa
+        transformação com dados, análises e reflexões.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#oportunidades" class="btn btn--primary btn--lg">
+          Explorar oportunidades
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#ameacas" class="btn btn--ghost btn--lg">
+          Ver os riscos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num" data-count="2" data-suffix="">0</div>
+          <span class="lbl">Lados de uma mesma transformação</span>
+        </div>
+        <div class="hero-stat">
+          <div class="num" data-count="5" data-suffix="">0</div>
+          <span class="lbl">Setores analisados em profundidade</span>
+        </div>
+        <div class="hero-stat">
+          <div class="num" data-count="100" data-suffix="%">0</div>
+          <span class="lbl">Foco no fator humano</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-orb">
+        <div class="orb-core">
+          <img
+            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=900&q=80"
+            alt="Ilustração de inteligência artificial com circuitos neurais"
+          />
+        </div>
+
+        <div class="orbit-chip c1"><i></i> Automação</div>
+        <div class="orbit-chip c2"><i></i> Produtividade</div>
+        <div class="orbit-chip c3"><i></i> Novas profissões</div>
+        <div class="orbit-chip c4"><i></i> Requalificação</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-mouse"></div>
+    <span>Role para explorar</span>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     TICKER
+     ========================================================================== -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker-track">
+    <div class="ticker-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+      <strong>Automação</strong> de tarefas repetitivas
+    </div>
+    <div class="ticker-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <strong>Produtividade</strong> potencializada
+    </div>
+    <div class="ticker-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <strong>Aprendizado</strong> contínuo
+    </div>
+    <div class="ticker-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <strong>Colaboração</strong> humano + máquina
+    </div>
+    <div class="ticker-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <strong>Ética</strong> e responsabilidade
+    </div>
+    <div class="ticker-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+      <strong>Inovação</strong> em todos os setores
+    </div>
+    <div class="ticker-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <strong>Educação</strong> como base de tudo
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     O QUE É IA
+     ========================================================================== -->
+<section class="section" id="o-que-e">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-visual reveal reveal--left">
+        <div class="about-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80"
+            alt="Robô humanoide representando a inteligência artificial"
+            loading="lazy"
+          />
+          <div class="about-img-caption">
+            <h4>Máquinas que aprendem com dados</h4>
+            <p>Sistemas capazes de identificar padrões, resolver problemas e produzir respostas.</p>
+          </div>
+        </div>
+
+        <div class="about-float-card">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a3 3 0 0 0-3 3v2a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+              <path d="M9 12H7a3 3 0 0 0 0 6h2"/>
+              <path d="M15 12h2a3 3 0 0 1 0 6h-2"/>
+            </svg>
+          </div>
+          <div>
+            <strong>IA</strong>
+            <span>Inteligência Artificial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal reveal--right">
+        <div class="eyebrow">Capítulo 01</div>
+        <h2 class="section-title">
+          O que é <span class="grad-text">Inteligência Artificial</span> e como ela funciona?
+        </h2>
+
+        <p>
+          A Inteligência Artificial é uma área da tecnologia que desenvolve sistemas e máquinas
+          capazes de executar tarefas que normalmente exigiriam algum tipo de inteligência humana.
+          Isso inclui <strong>aprender com informações</strong>, <strong>identificar padrões</strong>,
+          <strong>resolver problemas</strong>, interpretar perguntas e produzir respostas.
+        </p>
+
+        <p>
+          Por exemplo, em uma empresa, um sistema de IA pode organizar documentos, analisar grandes
+          quantidades de dados, responder perguntas de clientes e ajudar a identificar possíveis erros.
+          Na medicina, pode auxiliar profissionais na análise de exames. Na educação, pode oferecer
+          explicações e adaptar atividades às necessidades dos alunos.
+        </p>
+
+        <div class="about-callout">
+          <strong>Importante:</strong> a IA não funciona exatamente como uma pessoa. Mesmo quando
+          apresenta respostas semelhantes às humanas, ela não possui a mesma experiência, consciência,
+          responsabilidade ou capacidade de compreender o mundo como um ser humano. Por isso, a
+          participação humana continua sendo fundamental para orientar, verificar e utilizar os
+          resultados produzidos por essas ferramentas.
+        </div>
+
+        <div class="mini-features">
+          <div class="mini-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+            <div>
+              <b>Aprende com dados</b>
+              <span>Identifica padrões em grandes volumes de informação.</span>
+            </div>
+          </div>
+
+          <div class="mini-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <div>
+              <b>Interpreta perguntas</b>
+              <span>Compreende linguagem e produz respostas úteis.</span>
+            </div>
+          </div>
+
+          <div class="mini-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <circle cx="12" cy="17" r=".5" fill="currentColor"/>
+            </svg>
+            <div>
+              <b>Não substitui o humano</b>
+              <span>Precisa de supervisão, ética e decisão consciente.</span>
+            </div>
+          </div>
+
+          <div class="mini-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            <div>
+              <b>Atua em várias áreas</b>
+              <span>Saúde, educação, indústria, comércio e agricultura.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     COMO FUNCIONA
+     ========================================================================== -->
+<section class="section section--alt" id="como-funciona">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow">Capítulo 02</div>
+      <h2 class="section-title">Como a IA <span class="grad-text">funciona</span> na prática</h2>
+      <p class="section-sub">
+        Três etapas simples explicam a lógica por trás de qualquer sistema inteligente:
+        coletar informações, encontrar padrões e gerar respostas úteis para as pessoas.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <article class="card step-card reveal d-1">
+        <div class="step-num">01</div>
+        <h3>Coleta de dados</h3>
+        <p>
+          O sistema recebe informações: textos, imagens, números, sons ou históricos de
+          atendimento. Quanto mais organizados e representativos forem os dados, melhor
+          tende a ser o resultado produzido.
+        </p>
+      </article>
+
+      <article class="card step-card reveal d-2">
+        <div class="step-num">02</div>
+        <h3>Reconhecimento de padrões</h3>
+        <p>
+          A partir desses dados, o modelo aprende relações e regularidades. Ele passa a
+          identificar situações parecidas, classificar informações e prever resultados
+          com base no que já foi observado.
+        </p>
+      </article>
+
+      <article class="card step-card reveal d-3">
+        <div class="step-num">03</div>
+        <h3>Resposta e verificação</h3>
+        <p>
+          Por fim, o sistema gera respostas, sugestões ou ações. É nesse momento que a
+          supervisão humana se torna indispensável: verificar, corrigir e decidir continua
+          sendo papel das pessoas.
+        </p>
+      </article>
+    </div>
+
+    <div class="tabs reveal">
+      <div class="tab-buttons" id="tab-buttons">
+        <button class="tab-btn active" data-tab="tab-empresa">Empresas</button>
+        <button class="tab-btn" data-tab="tab-medicina">Medicina</button>
+        <button class="tab-btn" data-tab="tab-educacao">Educação</button>
+        <button class="tab-btn" data-tab="tab-industria">Indústria</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-empresa">
+        <div class="tab-panel-inner">
+          <div>
+            <h3>IA no ambiente corporativo</h3>
+            <p>
+              Nas empresas, a Inteligência Artificial organiza documentos, analisa grandes
+              volumes de dados e apoia o atendimento ao cliente. O objetivo não é eliminar
+              pessoas, mas liberar tempo para atividades que exigem julgamento e criatividade.
+            </p>
+            <ul class="tab-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Triagem automática de mensagens e solicitações
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Análise de indicadores e relatórios gerenciais
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Apoio à tomada de decisão com base em dados
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Detecção de erros e inconsistências em processos
+              </li>
+            </ul>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+            alt="Equipe de profissionais analisando dados em reunião"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-medicina">
+        <div class="tab-panel-inner">
+          <div>
+            <h3>IA na área da saúde</h3>
+            <p>
+              Na medicina, a IA pode auxiliar profissionais na análise de exames e na
+              identificação de alterações que merecem atenção. O diagnóstico e a decisão
+              sobre o cuidado continuam sendo responsabilidade de profissionais capacitados.
+            </p>
+            <ul class="tab-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Apoio na leitura de exames de imagem
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Organização de prontuários e históricos clínicos
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Alertas para situações que exigem atenção imediata
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Apoio a pesquisas científicas e estudos clínicos
+              </li>
+            </ul>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"
+            alt="Profissional de saúde utilizando tecnologia para analisar exames"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-educacao">
+        <div class="tab-panel-inner">
+          <div>
+            <h3>IA na educação</h3>
+            <p>
+              Na educação, a IA pode oferecer explicações, ajudar na organização dos estudos
+              e adaptar atividades às necessidades dos alunos. O professor, porém, continua
+              essencial para orientar, acompanhar e desenvolver o pensamento crítico.
+            </p>
+            <ul class="tab-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Trilhas de aprendizagem personalizadas
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Apoio na preparação de atividades e materiais
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Feedback rápido sobre exercícios e tarefas
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Estímulo à verificação de informações
+              </li>
+            </ul>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+            alt="Sala de aula com estudantes e professor"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-industria">
+        <div class="tab-panel-inner">
+          <div>
+            <h3>IA na indústria e agricultura</h3>
+            <p>
+              Na indústria, a IA ajuda a acompanhar máquinas e melhorar processos de produção.
+              Na agricultura, auxilia no monitoramento de plantações e na identificação de
+              problemas nas lavouras, tornando as operações mais precisas.
+            </p>
+            <ul class="tab-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Manutenção preditiva de equipamentos
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Controle de qualidade automatizado
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Monitoramento de lavouras por sensores e imagens
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Otimização do uso de recursos e insumos
+              </li>
+            </ul>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80"
+            alt="Braço robótico em linha de produção industrial"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     OPORTUNIDADES
+     ========================================================================== -->
+<section class="section" id="oportunidades">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color: var(--c-success); background: rgba(44,224,138,.08); border-color: rgba(44,224,138,.24);">
+        Capítulo 03
+      </div>
+      <h2 class="section-title">
+        A IA como <span class="grad-text--success">oportunidade de inovação</span>
+      </h2>
+      <p class="section-sub">
+        Quando utilizada de maneira responsável, a Inteligência Artificial funciona como uma
+        ferramenta de apoio ao ser humano, facilitando tarefas e criando possibilidades que
+        antes eram mais difíceis de alcançar.
+      </p>
+    </div>
+
+    <div class="opp-grid">
+
+      <article class="card opp-card reveal d-1">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3>Aumento da produtividade</h3>
+        <p>
+          Tarefas repetitivas e demoradas podem ser automatizadas, permitindo que os
+          funcionários dediquem mais tempo a trabalhos que exigem criatividade, planejamento,
+          comunicação e tomada de decisões.
+        </p>
+        <span class="opp-tag">Eficiência</span>
+      </article>
+
+      <article class="card opp-card reveal d-2">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <line x1="19" y1="8" x2="19" y2="14"/>
+            <line x1="22" y1="11" x2="16" y2="11"/>
+          </svg>
+        </div>
+        <h3>Novas profissões</h3>
+        <p>
+          Cresce a necessidade de profissionais que saibam desenvolver, administrar, monitorar
+          e utilizar sistemas de IA. Programação, análise de dados, segurança digital, robótica
+          e tecnologia da informação abrem novas possibilidades.
+        </p>
+        <span class="opp-tag">Novos empregos</span>
+      </article>
+
+      <article class="card opp-card reveal d-3">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20V10"/>
+            <path d="M18 20V4"/>
+            <path d="M6 20v-4"/>
+          </svg>
+        </div>
+        <h3>Melhoria no atendimento</h3>
+        <p>
+          Um sistema inteligente pode organizar centenas de mensagens, responder dúvidas
+          simples e identificar quais situações precisam da atenção de um funcionário,
+          tornando o trabalho mais rápido e organizado.
+        </p>
+        <span class="opp-tag">Experiência</span>
+      </article>
+
+      <article class="card opp-card reveal d-1">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
+        <h3>Saúde mais precisa</h3>
+        <p>
+          Na área da saúde, a IA pode apoiar a análise de informações médicas e ajudar
+          profissionais a identificar alterações que merecem atenção, sempre com supervisão
+          especializada.
+        </p>
+        <span class="opp-tag">Saúde</span>
+      </article>
+
+      <article class="card opp-card reveal d-2">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v6"/>
+            <path d="m4.93 4.93 4.24 4.24"/>
+            <path d="M2 12h6"/>
+            <path d="m4.93 19.07 4.24-4.24"/>
+            <path d="M12 22v-6"/>
+            <path d="m19.07 19.07-4.24-4.24"/>
+            <path d="M22 12h-6"/>
+            <path d="m19.07 4.93-4.24 4.24"/>
+          </svg>
+        </div>
+        <h3>Descobertas científicas</h3>
+        <p>
+          A IA auxilia na análise de grandes volumes de dados científicos, acelerando
+          pesquisas e apoiando descobertas que seriam inviáveis de forma manual em
+          tempo razoável.
+        </p>
+        <span class="opp-tag">Ciência</span>
+      </article>
+
+      <article class="card opp-card reveal d-3">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <h3>Impacto em vários setores</h3>
+        <p>
+          Agricultura, indústria, saúde, comércio e educação já sentem os efeitos positivos
+          da automação inteligente, com processos mais eficientes e decisões mais bem
+          fundamentadas em dados.
+        </p>
+        <span class="opp-tag">Multi-setorial</span>
+      </article>
+
+    </div>
+
+    <div class="split-banner reveal">
+      <img
+        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=80"
+        alt="Equipe colaborando com tecnologias digitais"
+        loading="lazy"
+      />
+      <div class="split-banner-content">
+        <h3>Colaboração, não substituição</h3>
+        <p>
+          Imagine uma empresa que recebe centenas de mensagens de clientes todos os dias.
+          Um sistema inteligente pode organizar essas mensagens, responder dúvidas simples e
+          identificar quais situações precisam da atenção de um funcionário. Dessa maneira,
+          o trabalho se torna mais rápido e organizado, enquanto os profissionais concentram
+          seus esforços em problemas mais complexos.
+        </p>
+        <a href="#comparativo" class="btn btn--primary" style="align-self:flex-start;">
+          Ver comparativo completo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     AMEAÇAS
+     ========================================================================== -->
+<section class="section section--alt threat-section" id="ameacas">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color: var(--c-danger); background: rgba(255,82,82,.08); border-color: rgba(255,82,82,.24);">
+        Capítulo 04
+      </div>
+      <h2 class="section-title">
+        A IA como <span class="grad-text--danger">ameaça aos empregos</span>
+      </h2>
+      <p class="section-sub">
+        Apesar de suas vantagens, o avanço da Inteligência Artificial também apresenta desafios
+        que precisam ser encarados com seriedade e planejamento.
+      </p>
+    </div>
+
+    <div class="threat-grid">
+
+      <article class="card threat-card reveal d-1">
+        <div class="t-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Automação de tarefas repetitivas</h3>
+          <p>
+            Trabalhos que envolvem atividades repetitivas, padronizadas e previsíveis podem ser
+            especialmente afetados. Sistemas tecnológicos conseguem organizar cadastros, preencher
+            documentos e classificar informações com grande velocidade.
+          </p>
+        </div>
+      </article>
+
+      <article class="card threat-card reveal d-2">
+        <div class="t-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Redução de postos específicos</h3>
+          <p>
+            Em determinados contextos, a automação pode diminuir a necessidade de trabalhadores
+            para executar tarefas específicas. É importante entender, porém, que a substituição
+            de tarefas não significa necessariamente o desaparecimento de uma profissão inteira.
+          </p>
+        </div>
+      </article>
+
+      <article class="card threat-card reveal d-3">
+        <div class="t-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/>
+            <path d="m19 9-5 5-4-4-3 3"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Aumento da desigualdade</h3>
+          <p>
+            Nem todos os trabalhadores conseguem se adaptar às mudanças com a mesma facilidade.
+            Pessoas sem acesso à educação de qualidade, à internet ou a oportunidades de
+            qualificação podem encontrar maiores dificuldades.
+          </p>
+        </div>
+      </article>
+
+      <article class="card threat-card reveal d-4">
+        <div class="t-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Dependência excessiva da tecnologia</h3>
+          <p>
+            Quando uma empresa utiliza sistemas de IA sem supervisão adequada, podem surgir
+            erros, informações incorretas, decisões injustas e problemas relacionados à
+            privacidade dos dados.
+          </p>
+        </div>
+      </article>
+
+      <article class="card threat-card reveal d-5">
+        <div class="t-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Exigência de adaptação rápida</h3>
+          <p>
+            As tecnologias mudam rapidamente, e os profissionais precisarão estar dispostos a
+            aprender novos métodos, desenvolver conhecimentos e acompanhar as transformações
+            de suas áreas de atuação continuamente.
+          </p>
+        </div>
+      </article>
+
+      <article class="card threat-card reveal d-6">
+        <div class="t-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Riscos de vieses e erros</h3>
+          <p>
+            Sistemas treinados com dados inadequados podem reproduzir preconceitos e gerar
+            decisões injustas. Por isso, não basta adotar novas ferramentas: é necessário
+            utilizá-las com responsabilidade, segurança e acompanhamento humano.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="chart-wrap reveal">
+      <div class="chart-header">
+        <div>
+          <h3>Percepção sobre o impacto da IA no emprego</h3>
+          <p>Distribuição ilustrativa de percepções em diferentes grupos profissionais</p>
+        </div>
+        <div class="chart-legend">
+          <span><i style="background: var(--c-success);"></i> Oportunidade</span>
+          <span><i style="background: var(--c-warning);"></i> Neutro / incerto</span>
+          <span><i style="background: var(--c-danger);"></i> Ameaça</span>
+        </div>
+      </div>
+      <div class="chart-canvas-box">
+        <canvas id="chart-percepcao"></canvas>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     COMPARATIVO
+     ========================================================================== -->
+<section class="section" id="comparativo">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow">Capítulo 05</div>
+      <h2 class="section-title">Oportunidade <span class="grad-text">vs.</span> ameaça</h2>
+      <p class="section-sub">
+        Os dois lados da mesma transformação, colocados lado a lado para uma análise honesta
+        e equilibrada.
+      </p>
+    </div>
+
+    <div class="compare-grid reveal">
+
+      <div class="compare-col pros">
+        <h3>
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+          Oportunidades
+        </h3>
+        <p>Quando aplicada com planejamento e responsabilidade.</p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Aumento significativo da produtividade em tarefas repetitivas
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Liberação de tempo para atividades criativas e estratégicas
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Criação de novas profissões e áreas de atuação
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Avanços em saúde, agricultura, indústria e educação
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Apoio à tomada de decisão com base em dados concretos
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Acesso ampliado a serviços e informações de qualidade
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Colaboração entre seres humanos e máquinas
+          </li>
+        </ul>
+      </div>
+
+      <div class="compare-vs"><span>VS</span></div>
+
+      <div class="compare-col cons">
+        <h3>
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </span>
+          Ameaças
+        </h3>
+        <p>Quando utilizada sem preocupação com os trabalhadores.</p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Eliminação de determinadas funções padronizadas
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Aumento das desigualdades sociais e econômicas
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Dificuldade de adaptação para parte dos profissionais
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Riscos de erros, vieses e decisões injustas
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Problemas relacionados à privacidade dos dados
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Dependência tecnológica sem supervisão adequada
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Pressão por requalificação em prazos curtos
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PROFISSIONAL DO FUTURO
+     ========================================================================== -->
+<section class="section section--alt" id="futuro">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow">Capítulo 06</div>
+      <h2 class="section-title">
+        Como será o <span class="grad-text">profissional do futuro</span>?
+      </h2>
+      <p class="section-sub">
+        Com a transformação do mercado de trabalho, o profissional do futuro precisará estar
+        preparado para aprender continuamente — sem abandonar aquilo que nos torna humanos.
+      </p>
+    </div>
+
+    <div class="skills-layout">
+
+      <div class="skills-visual reveal reveal--left">
+        <img
+          src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=80"
+          alt="Profissional trabalhando com tecnologia e análise de dados"
+          loading="lazy"
+        />
+        <div class="skills-badge">
+          <span>Aprender sempre</span>
+          <span>Pensar criticamente</span>
+          <span>Colaborar</span>
+        </div>
+      </div>
+
+      <div class="reveal reveal--right">
+        <p style="color: var(--c-text-soft); margin-bottom: 18px; line-height: 1.85;">
+          Isso não significa que todas as pessoas terão de trabalhar com programação ou se tornar
+          especialistas em tecnologia, mas será cada vez mais importante compreender como as
+          ferramentas digitais funcionam e como podem ser utilizadas de maneira eficiente.
+        </p>
+        <p style="color: var(--c-text-soft); margin-bottom: 8px; line-height: 1.85;">
+          Uma das habilidades mais importantes será a <strong style="color: var(--c-text);">capacidade
+          de adaptação</strong>. As tecnologias mudam rapidamente, e os profissionais precisarão
+          estar dispostos a aprender novos métodos e acompanhar as transformações de suas áreas.
+        </p>
+
+        <div class="skill-bars">
+          <div class="skill-bar">
+            <div class="skill-bar-head"><b>Capacidade de adaptação</b><span>96%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="96"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-head"><b>Pensamento crítico</b><span>94%</span></div>
+            <div class="skill-track"><div class="skill-fill warm" data-width="94"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-head"><b>Comunicação e empatia</b><span>91%</span></div>
+            <div class="skill-track"><div class="skill-fill green" data-width="91"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-head"><b>Letramento digital</b><span>89%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="89"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-head"><b>Criatividade e inovação</b><span>87%</span></div>
+            <div class="skill-track"><div class="skill-fill warm" data-width="87"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="skills-cards">
+
+      <article class="card skill-card reveal d-1">
+        <div class="s-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18h6"/>
+            <path d="M10 22h4"/>
+            <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>
+          </svg>
+        </div>
+        <h4>Criatividade</h4>
+        <p>Criar soluções novas para problemas que não seguem padrões.</p>
+      </article>
+
+      <article class="card skill-card reveal d-2">
+        <div class="s-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <circle cx="12" cy="17" r=".6" fill="currentColor"/>
+          </svg>
+        </div>
+        <h4>Pensamento crítico</h4>
+        <p>Questionar respostas prontas e verificar informações.</p>
+      </article>
+
+      <article class="card skill-card reveal d-3">
+        <div class="s-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h4>Comunicação</h4>
+        <p>Traduzir ideias complexas de forma clara e acessível.</p>
+      </article>
+
+      <article class="card skill-card reveal d-4">
+        <div class="s-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
+        <h4>Empatia</h4>
+        <p>Compreender pessoas, contextos e sentimentos envolvidos.</p>
+      </article>
+
+      <article class="card skill-card reveal d-5">
+        <div class="s-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h4>Colaboração</h4>
+        <p>Trabalhar em equipes diversas, com humanos e ferramentas.</p>
+      </article>
+
+      <article class="card skill-card reveal d-6">
+        <div class="s-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h4>Responsabilidade</h4>
+        <p>Assumir decisões conscientes e éticas sobre o uso da tecnologia.</p>
+      </article>
+
+      <article class="card skill-card reveal d-7">
+        <div class="s-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h4>Letramento digital</h4>
+        <p>Entender como as ferramentas digitais funcionam e podem ser usadas.</p>
+      </article>
+
+      <article class="card skill-card reveal d-8">
+        <div class="s-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v6"/>
+            <path d="m4.93 4.93 4.24 4.24"/>
+            <path d="M2 12h6"/>
+            <path d="m4.93 19.07 4.24-4.24"/>
+            <path d="M12 22v-6"/>
+            <path d="m19.07 19.07-4.24-4.24"/>
+            <path d="M22 12h-6"/>
+            <path d="m19.07 4.93-4.24 4.24"/>
+          </svg>
+        </div>
+        <h4>Resolução de problemas</h4>
+        <p>Enfrentar situações complexas com método e flexibilidade.</p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     TIMELINE
+     ========================================================================== -->
+<section class="section" id="timeline">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow">Linha do tempo</div>
+      <h2 class="section-title">A evolução da IA no <span class="grad-text">trabalho</span></h2>
+      <p class="section-sub">
+        Uma trajetória marcada por descobertas, expectativas e transformações profundas na
+        forma como as pessoas produzem e se relacionam com a tecnologia.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <span class="tl-year">1950</span>
+        <h4>Os primeiros questionamentos</h4>
+        <p>
+          Surgem as primeiras reflexões formais sobre a possibilidade de máquinas pensarem.
+          A computação dá os primeiros passos e a ideia de "inteligência artificial" começa a
+          ganhar contornos teóricos.
+        </p>
+      </div>
+
+      <div class="tl-item reveal d-1">
+        <span class="tl-year">1980</span>
+        <h4>Sistemas especialistas</h4>
+        <p>
+          A indústria passa a experimentar sistemas baseados em regras para apoiar decisões.
+          A automação chega aos escritórios e às linhas de produção, iniciando debates sobre
+          substituição de tarefas.
+        </p>
+      </div>
+
+      <div class="tl-item reveal d-2">
+        <span class="tl-year">2000</span>
+        <h4>A era dos dados</h4>
+        <p>
+          A popularização da internet gera volumes inéditos de informação. O aprendizado de
+          máquina se fortalece e passa a ser aplicado em recomendações, buscas e análises
+          de comportamento.
+        </p>
+      </div>
+
+      <div class="tl-item reveal d-3">
+        <span class="tl-year">2015</span>
+        <h4>Redes neurais e automação inteligente</h4>
+        <p>
+          Avanços em poder computacional permitem modelos mais sofisticados. Assistentes
+          virtuais, tradução automática e reconhecimento de imagens tornam-se parte do
+          cotidiano de milhões de pessoas.
+        </p>
+      </div>
+
+      <div class="tl-item reveal d-4">
+        <span class="tl-year">2020</span>
+        <h4>IA generativa no dia a dia</h4>
+        <p>
+          Sistemas capazes de produzir textos, imagens e códigos passam a ser usados em
+          empresas. A discussão sobre o futuro das profissões ganha força em todo o mundo
+          e chega às salas de aula.
+        </p>
+      </div>
+
+      <div class="tl-item reveal d-5">
+        <span class="tl-year">Futuro</span>
+        <h4>Colaboração entre humanos e máquinas</h4>
+        <p>
+          O cenário mais provável é o da colaboração: a tecnologia amplia as capacidades
+          humanas, e as pessoas se concentram no que exige criatividade, empatia e decisão
+          consciente. Educação e qualificação contínua tornam-se centrais.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     ESTATÍSTICAS
+     ========================================================================== -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+
+      <div class="stat-block reveal d-1">
+        <div class="stat-num" data-count="86" data-suffix="%">0</div>
+        <div class="stat-lbl">dos profissionais acreditam que a IA mudará suas rotinas de trabalho</div>
+        <span class="stat-src">Percepção geral</span>
+      </div>
+
+      <div class="stat-block reveal d-2">
+        <div class="stat-num" data-count="61" data-suffix="%">0</div>
+        <div class="stat-lbl">veem mais oportunidades do que riscos na adoção da tecnologia</div>
+        <span class="stat-src">Visão otimista</span>
+      </div>
+
+      <div class="stat-block reveal d-3">
+        <div class="stat-num" data-count="74" data-suffix="%">0</div>
+        <div class="stat-lbl">consideram a qualificação contínua essencial para o futuro</div>
+        <span class="stat-src">Educação</span>
+      </div>
+
+      <div class="stat-block reveal d-4">
+        <div class="stat-num" data-count="9" data-suffix=" em 10">0</div>
+        <div class="stat-lbl">especialistas defendem supervisão humana sobre sistemas de IA</div>
+        <span class="stat-src">Governança</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     SETORES
+     ========================================================================== -->
+<section class="section" id="setores">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow">Capítulo 07</div>
+      <h2 class="section-title">A IA em <span class="grad-text">diferentes setores</span></h2>
+      <p class="section-sub">
+        Passe o mouse (ou toque) nos cartões para descobrir como a Inteligência Artificial
+        já está presente em áreas essenciais da sociedade.
+      </p>
+    </div>
+
+    <div class="sector-grid">
+
+      <article class="sector-card reveal d-1">
+        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=700&q=80" alt="Plantação monitorada por tecnologia" loading="lazy" />
+        <div class="sector-body">
+          <div class="sector-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22V8"/>
+              <path d="M12 8C12 8 8 6 5 7c0 0 0 5 7 5"/>
+              <path d="M12 12c0 0 4-2 7-1 0 0 0 5-7 5"/>
+            </svg>
+          </div>
+          <h4>Agricultura</h4>
+          <p>Monitoramento de plantações, identificação de problemas nas lavouras e uso mais eficiente de recursos.</p>
+        </div>
+      </article>
+
+      <article class="sector-card reveal d-2">
+        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=700&q=80" alt="Braço robótico industrial" loading="lazy" />
+        <div class="sector-body">
+          <div class="sector-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <h4>Indústria</h4>
+          <p>Acompanhamento de máquinas, manutenção preditiva e melhoria dos processos de produção.</p>
+        </div>
+      </article>
+
+      <article class="sector-card reveal d-3">
+        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=700&q=80" alt="Tecnologia aplicada à saúde" loading="lazy" />
+        <div class="sector-body">
+          <div class="sector-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <h4>Saúde</h4>
+          <p>Apoio à análise de informações médicas e identificação de alterações que merecem atenção.</p>
+        </div>
+      </article>
+
+      <article class="sector-card reveal d-4">
+        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=700&q=80" alt="Comércio e atendimento ao consumidor" loading="lazy" />
+        <div class="sector-body">
+          <div class="sector-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </div>
+          <h4>Comércio</h4>
+          <p>Atendimento ao consumidor e organização de estoques com apoio de sistemas inteligentes.</p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     RESPONSABILIDADES
+     ========================================================================== -->
+<section class="section section--alt" id="responsabilidades">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow">Capítulo 08</div>
+      <h2 class="section-title">
+        O papel das <span class="grad-text">escolas, empresas e governo</span>
+      </h2>
+      <p class="section-sub">
+        Para que a Inteligência Artificial traga benefícios para toda a sociedade, é necessário
+        que diferentes setores participem desse processo de transformação.
+      </p>
+    </div>
+
+    <div class="resp-grid">
+
+      <article class="card resp-card reveal d-1">
+        <div class="resp-img">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80" alt="Estudantes em sala de aula" loading="lazy" />
+        </div>
+        <div class="resp-body">
+          <div class="resp-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <h3>Escolas</h3>
+          <p>
+            Precisam preparar os estudantes para um mundo cada vez mais tecnológico,
+            desenvolvendo tanto conteúdos tradicionais quanto competências digitais.
+          </p>
+          <ul class="resp-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Desenvolver pensamento crítico
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Ensinar cidadania digital
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Estimular a verificação de informações
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card resp-card reveal d-2">
+        <div class="resp-img">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Ambiente corporativo moderno" loading="lazy" />
+        </div>
+        <div class="resp-body">
+          <div class="resp-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <h3>Empresas</h3>
+          <p>
+            Devem utilizar a tecnologia de maneira responsável e oferecer oportunidades de
+            capacitação aos seus funcionários, em vez de apenas substituí-los.
+          </p>
+          <ul class="resp-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Investir em treinamento de equipes
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Manter supervisão humana adequada
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Proteger dados e a privacidade
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card resp-card reveal d-3">
+        <div class="resp-img">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Reunião de equipe de políticas públicas" loading="lazy" />
+        </div>
+        <div class="resp-body">
+          <div class="resp-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="22" x2="21" y2="22"/>
+              <line x1="6" y1="18" x2="6" y2="11"/>
+              <line x1="10" y1="18" x2="10" y2="11"/>
+              <line x1="14" y1="18" x2="14" y2="11"/>
+              <line x1="18" y1="18" x2="18" y2="11"/>
+              <polygon points="12 2 20 7 4 7"/>
+            </svg>
+          </div>
+          <h3>Governo</h3>
+          <p>
+            Precisa desenvolver políticas públicas que ampliem o acesso à educação, à
+            qualificação profissional e à inclusão digital, protegendo direitos.
+          </p>
+          <ul class="resp-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Ampliar a inclusão digital
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Criar regras para uso responsável de dados
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Reduzir desigualdades sociais
+            </li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     QUIZ
+     ========================================================================== -->
+<section class="section" id="quiz">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow">Interativo</div>
+      <h2 class="section-title">Teste o que você <span class="grad-text">aprendeu</span></h2>
+      <p class="section-sub">
+        Cinco perguntas rápidas para revisar os principais conceitos sobre Inteligência
+        Artificial e o futuro do trabalho.
+      </p>
+    </div>
+
+    <div class="quiz-box reveal" id="quiz-box">
+
+      <div class="quiz-progress">
+        <div class="quiz-progress-track">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+        <span class="quiz-progress-label" id="quiz-progress-label">1 / 5</span>
+      </div>
+
+      <div id="quiz-content">
+        <h3 class="quiz-question" id="quiz-question">Carregando pergunta...</h3>
+        <div class="quiz-options" id="quiz-options"></div>
+        <div class="quiz-footer">
+          <div class="quiz-feedback" id="quiz-feedback"></div>
+          <button class="btn btn--primary btn--sm" id="quiz-next" disabled>
+            Próxima
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="quiz-result" style="display:none;">
+        <div class="score-ring" id="score-ring">
+          <div class="score-inner">
+            <b id="score-value">0/5</b>
+            <span>acertos</span>
+          </div>
+        </div>
+        <h3 id="result-title">Resultado</h3>
+        <p id="result-desc">Descrição do resultado.</p>
+        <button class="btn btn--ghost" id="quiz-restart">
+          Refazer o quiz
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"/>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FAQ
+     ========================================================================== -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="eyebrow">Dúvidas frequentes</div>
+      <h2 class="section-title">Perguntas <span class="grad-text">frequentes</span></h2>
+      <p class="section-sub">
+        Respostas diretas para as dúvidas mais comuns sobre a relação entre Inteligência
+        Artificial e o mercado de trabalho.
+      </p>
+    </div>
+
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          A Inteligência Artificial vai acabar com todos os empregos?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Não. A substituição de tarefas não significa necessariamente o desaparecimento de
+            uma profissão inteira. Muitas ocupações são formadas por diferentes atividades, e
+            algumas delas podem ser automatizadas enquanto outras continuam dependendo da
+            participação humana. O futuro provavelmente será marcado pela colaboração entre
+            seres humanos e máquinas.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d-1">
+        <button class="faq-q">
+          Quais profissões correm mais risco de automação?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Trabalhos que envolvem atividades repetitivas, padronizadas e previsíveis podem ser
+            especialmente afetados. Exemplos incluem tarefas de organização de cadastros,
+            preenchimento de documentos, classificação de informações e algumas etapas do
+            atendimento ao público.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d-2">
+        <button class="faq-q">
+          A IA pode substituir totalmente o julgamento humano?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Não. Mesmo quando apresenta respostas semelhantes às humanas, a IA não possui a
+            mesma experiência, consciência, responsabilidade ou capacidade de compreender o
+            mundo como um ser humano. Em muitas profissões, é necessário compreender
+            sentimentos, interpretar situações complexas e tomar decisões responsáveis.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d-3">
+        <button class="faq-q">
+          Que habilidades serão mais valorizadas no futuro?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Além das habilidades tecnológicas, as características humanas continuarão tendo
+            grande importância: criatividade, pensamento crítico, comunicação, empatia,
+            responsabilidade, colaboração e capacidade de resolver problemas são exemplos de
+            competências fundamentais. A capacidade de adaptação também será decisiva.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d-4">
+        <button class="faq-q">
+          Como as escolas devem se preparar para essa transformação?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            As escolas precisam ensinar conteúdos tradicionais, desenvolver o pensamento crítico
+            e apresentar conhecimentos sobre tecnologia, cidadania digital e uso responsável da
+            Inteligência Artificial. Os alunos também precisam aprender a não confiar
+            automaticamente em todas as respostas produzidas por sistemas digitais.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d-5">
+        <button class="faq-q">
+          Qual é o verdadeiro desafio da sociedade diante da IA?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            O verdadeiro desafio não é impedir o avanço da tecnologia, mas garantir que esse
+            avanço aconteça de forma equilibrada. A sociedade precisa compreender que o
+            desenvolvimento tecnológico deve estar a serviço das pessoas, e não apenas da
+            redução de custos ou do aumento dos lucros das empresas.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d-6">
+        <button class="faq-q">
+          A IA é, afinal, uma oportunidade ou uma ameaça?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Ela pode representar as duas coisas, dependendo da maneira como é desenvolvida,
+            utilizada e introduzida na sociedade. Quando aplicada com planejamento e
+            responsabilidade, pode melhorar a produtividade e criar novas oportunidades.
+            Quando utilizada sem preocupação com os trabalhadores, pode contribuir para
+            eliminar funções e aumentar desigualdades.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CONCLUSÃO / CTA
+     ========================================================================== -->
+<section class="cta-section" id="conclusao">
+  <div class="container">
+    <div class="cta-inner reveal">
+
+      <div class="eyebrow" style="justify-content:center;">Conclusão</div>
+
+      <p class="cta-quote">
+        "O grande desafio do futuro não será <span class="hl">competir com as máquinas</span>
+        em tudo o que elas conseguem fazer, mas aprender a utilizar a tecnologia para
+        <span class="hl">ampliar as capacidades humanas</span> e criar novas oportunidades
+        para todos."
+      </p>
+
+      <p style="color: var(--c-text-soft); font-size: 1.02rem; line-height: 1.86; max-width: 760px; margin: 0 auto 38px;">
+        A Inteligência Artificial está modificando o mercado de trabalho e continuará
+        influenciando as profissões do futuro. O futuro do trabalho dependerá da capacidade
+        de adaptação dos indivíduos e da responsabilidade das empresas, das instituições de
+        ensino e dos governos. Investir em educação, qualificação profissional e
+        desenvolvimento de habilidades humanas será fundamental.
+      </p>
+
+      <div class="cta-actions">
+        <a href="#hero" class="btn btn--primary btn--lg">
+          Voltar ao início
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </a>
+        <a href="#quiz" class="btn btn--ghost btn--lg">
+          Refazer o quiz
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"/>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#hero" class="brand">
+          <div class="brand-mark">IA</div>
+          <div class="brand-text">
+            IA &amp; Trabalho
+            <small>Observatório Digital</small>
+          </div>
+        </a>
+        <p>
+          Um projeto educativo dedicado a compreender como a Inteligência Artificial
+          transforma o mercado de trabalho — e como podemos construir um futuro mais justo
+          e humano com ela.
+        </p>
+        <div class="footer-social">
+          <a href="#hero" aria-label="Início">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </a>
+          <a href="#o-que-e" aria-label="Conteúdo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </a>
+          <a href="#quiz" aria-label="Quiz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <circle cx="12" cy="17" r=".6" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#faq" aria-label="FAQ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Conteúdo</h5>
+        <ul>
+          <li><a href="#o-que-e">O que é IA</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#oportunidades">Oportunidades</a></li>
+          <li><a href="#ameacas">Ameaças</a></li>
+          <li><a href="#comparativo">Comparativo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Análises</h5>
+        <ul>
+          <li><a href="#futuro">Profissional do futuro</a></li>
+          <li><a href="#timeline">Linha do tempo</a></li>
+          <li><a href="#setores">Setores</a></li>
+          <li><a href="#responsabilidades">Responsabilidades</a></li>
+          <li><a href="#conclusao">Conclusão</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Interativo</h5>
+        <ul>
+          <li><a href="#quiz">Quiz de conhecimento</a></li>
+          <li><a href="#faq">Perguntas frequentes</a></li>
+          <li><a href="#hero">Voltar ao topo</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; <span id="year">2025</span> <strong>IA &amp; Trabalho</strong> — Projeto educativo.
+        Todos os direitos reservados.
+      </p>
+      <div class="made">
+        Feito com
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        e tecnologia
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Botão voltar ao topo -->
+<button id="back-to-top" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="19" x2="12" y2="5"></line>
+    <polyline points="5 12 12 5 19 12"></polyline>
+  </svg>
+</button>
+
+<!-- ==========================================================================
+     JAVASCRIPT
+     ========================================================================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ========================================================================
+     0. UTILITÁRIOS
+     ======================================================================== */
+  const $  = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+  const prefersReducedMotion =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ========================================================================
+     1. PRELOADER
+     ======================================================================== */
+  (function initPreloader() {
+    const preloader = $('#preloader');
+    const fill = $('#loader-fill');
+    if (!preloader || !fill) return;
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += Math.random() * 16 + 6;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        setTimeout(() => {
+          preloader.classList.add('hidden');
+          document.body.classList.remove('no-scroll');
+          // Dispara animações iniciais
+          window.dispatchEvent(new Event('site:ready'));
+        }, 340);
+      }
+      fill.style.width = progress + '%';
+    }, 130);
+
+    document.body.classList.add('no-scroll');
+
+    // Segurança: esconde após 6s mesmo se algo falhar
+    setTimeout(() => {
+      preloader.classList.add('hidden');
+      document.body.classList.remove('no-scroll');
+    }, 6000);
+  })();
+
+  /* ========================================================================
+     2. TEMA CLARO / ESCURO
+     ======================================================================== */
+  (function initTheme() {
+    const root = document.documentElement;
+    const toggle = $('#theme-toggle');
+    if (!toggle) return;
+
+    const stored = localStorage.getItem('ia-theme');
+    if (stored) {
+      root.setAttribute('data-theme', stored);
+    }
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', current);
+      localStorage.setItem('ia-theme', current);
+      // Redesenha gráficos quando o tema muda
+      setTimeout(() => {
+        window.dispatchEvent(new Event('site:themechange'));
+      }, 60);
+    });
+  })();
+
+  /* ========================================================================
+     3. NAVEGAÇÃO: SCROLL, PROGRESSO E MENU MOBILE
+     ======================================================================== */
+  (function initNav() {
+    const navbar = $('#navbar');
+    const progress = $('#scroll-progress');
+    const backToTop = $('#back-to-top');
+    const hamburger = $('#hamburger');
+    const mobileMenu = $('#mobile-menu');
+    const navLinks = $$('#nav-links a');
+
+    let ticking = false;
+
+    function onScroll() {
+      const y = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (y / docHeight) * 100 : 0;
+
+      if (progress) progress.style.width = pct + '%';
+
+      if (navbar) {
+        navbar.classList.toggle('scrolled', y > 30);
+      }
+
+      if (backToTop) {
+        backToTop.classList.toggle('show', y > 620);
+      }
+
+      // Link ativo
+      const sections = $$('section[id]');
+      let currentId = '';
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 140;
+        if (y >= top) currentId = sec.id;
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    onScroll();
+
+    // Menu mobile
+    if (hamburger && mobileMenu) {
+      const closeMenu = () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+      };
+
+      hamburger.addEventListener('click', () => {
+        const willOpen = !hamburger.classList.contains('open');
+        hamburger.classList.toggle('open', willOpen);
+        mobileMenu.classList.toggle('open', willOpen);
+        document.body.classList.toggle('no-scroll', willOpen);
+      });
+
+      $$('#mobile-menu a').forEach(a => a.addEventListener('click', closeMenu));
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    }
+
+    // Voltar ao topo
+    if (backToTop) {
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+
+  /* ========================================================================
+     4. CURSOR PERSONALIZADO
+     ======================================================================== */
+  (function initCursor() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    if (window.innerWidth <= 900) return;
+
+    const dot = $('#cursor-dot');
+    const ring = $('#cursor-ring');
+    if (!dot || !ring) return;
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    });
+
+    function animate() {
+      ringX += (mouseX - ringX) * 0.16;
+      ringY += (mouseY - ringY) * 0.16;
+      ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    const hoverables = 'a, button, .card, .sector-card, .faq-q, .quiz-option, .tab-btn, .hero-stat';
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest(hoverables)) ring.classList.add('is-hover');
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest(hoverables)) ring.classList.remove('is-hover');
+    });
+
+    document.addEventListener('mouseleave', () => {
+      dot.style.opacity = '0';
+      ring.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      dot.style.opacity = '1';
+      ring.style.opacity = '1';
+    });
+  })();
+
+  /* ========================================================================
+     5. CANVAS DE PARTÍCULAS DO HERO
+     ======================================================================== */
+  (function initHeroCanvas() {
+    const canvas = $('#hero-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let raf = null;
+    let w = 0, h = 0;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    const COLORS = ['#00d4ff', '#7c5cff', '#ff4d8d', '#2ce08a'];
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      w = rect.width;
+      h = rect.height;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      buildParticles();
+    }
+
+    function buildParticles() {
+      const count = Math.min(Math.floor((w * h) / 16000), 95);
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 1.9 + 0.6,
+          vx: (Math.random() - 0.5) * 0.32,
+          vy: (Math.random() - 0.5) * 0.32,
+          color: COLORS[Math.floor(Math.random() * COLORS.length)],
+          alpha: Math.random() * 0.5 + 0.25
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+
+      // Linhas de conexão
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i];
+          const b = particles[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 135) {
+            const opacity = (1 - dist / 135) * 0.20;
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
+            ctx.lineWidth = 0.7;
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Partículas
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < -12) p.x = w + 12;
+        if (p.x > w + 12) p.x = -12;
+        if (p.y < -12) p.y = h + 12;
+        if (p.y > h + 12) p.y = -12;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      });
+
+      raf = requestAnimationFrame(draw);
+    }
+
+    resize();
+    window.addEventListener('resize', () => {
+      clearTimeout(canvas._rt);
+      canvas._rt = setTimeout(resize, 220);
+    });
+
+    if (!prefersReducedMotion) {
+      draw();
+    } else {
+      // Desenha uma única vez
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      });
+    }
+
+    // Pausa quando fora da tela
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (raf) cancelAnimationFrame(raf);
+      } else if (!prefersReducedMotion) {
+        draw();
+      }
+    });
+  })();
+
+  /* ========================================================================
+     6. EFEITO DE DIGITAÇÃO NO HERO
+     ======================================================================== */
+  (function initTyping() {
+    const el = $('#typing-text');
+    if (!el) return;
+
+    const phrases = [
+      'Oportunidade de inovação ou ameaça aos empregos?',
+      'Automação inteligente de tarefas repetitivas.',
+      'Novas profissões que ainda nem existem.',
+      'Colaboração entre seres humanos e máquinas.',
+      'Educação e adaptação como caminho possível.'
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function tick() {
+      const phrase = phrases[phraseIndex];
+      const speed = deleting ? 32 : 58;
+
+      if (!deleting) {
+        charIndex++;
+        el.textContent = phrase.substring(0, charIndex);
+        if (charIndex === phrase.length) {
+          deleting = true;
+          setTimeout(tick, 2100);
+          return;
+        }
+      } else {
+        charIndex--;
+        el.textContent = phrase.substring(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(tick, 420);
+          return;
+        }
+      }
+      setTimeout(tick, speed);
+    }
+
+    if (prefersReducedMotion) {
+      el.textContent = phrases[0];
+    } else {
+      setTimeout(tick, 1200);
+    }
+  })();
+
+  /* ========================================================================
+     7. REVELAÇÃO NO SCROLL (IntersectionObserver)
+     ======================================================================== */
+  (function initReveal() {
+    const items = $$('.reveal');
+    if (!items.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -70px 0px'
+    });
+
+    items.forEach(el => observer.observe(el));
+  })();
+
+  /* ========================================================================
+     8. CONTADORES ANIMADOS
+     ======================================================================== */
+  (function initCounters() {
+    const counters = $$('[data-count]');
+    if (!counters.length) return;
+
+    function animateCounter(el) {
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1900;
+      const start = performance.now();
+
+      function frame(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.round(target * eased);
+        el.textContent = value + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          el.textContent = target + suffix;
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      counters.forEach(animateCounter);
+      return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => observer.observe(el));
+  })();
+
+  /* ========================================================================
+     9. BARRAS DE HABILIDADE
+     ======================================================================== */
+  (function initSkillBars() {
+    const fills = $$('.skill-fill');
+    if (!fills.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      fills.forEach(f => { f.style.width = f.getAttribute('data-width') + '%'; });
+      return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target;
+          const width = fill.getAttribute('data-width') || '0';
+          setTimeout(() => { fill.style.width = width + '%'; }, 180);
+          observer.unobserve(fill);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    fills.forEach(f => observer.observe(f));
+  })();
+
+  /* ========================================================================
+     10. ABAS
+     ======================================================================== */
+  (function initTabs() {
+    const buttons = $$('.tab-btn');
+    const panels = $$('.tab-panel');
+    if (!buttons.length || !panels.length) return;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tab');
+
+        buttons.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        const target = document.getElementById(targetId);
+        if (target) target.classList.add('active');
+      });
+    });
+  })();
+
+  /* ========================================================================
+     11. FAQ (ACCORDION)
+     ======================================================================== */
+  (function initFaq() {
+    const items = $$('.faq-item');
+    if (!items.length) return;
+
+    items.forEach(item => {
+      const question = $('.faq-q', item);
+      const answer = $('.faq-a', item);
+      if (!question || !answer) return;
+
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // Fecha os outros
+        items.forEach(other => {
+          if (other !== item) {
+            other.classList.remove('open');
+            const otherAnswer = $('.faq-a', other);
+            if (otherAnswer) otherAnswer.style.maxHeight = null;
+          }
+        });
+
+        if (isOpen) {
+          item.classList.remove('open');
+          answer.style.maxHeight = null;
+        } else {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Recalcula alturas ao redimensionar
+    window.addEventListener('resize', () => {
+      items.forEach(item => {
+        if (item.classList.contains('open')) {
+          const answer = $('.faq-a', item);
+          if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+
+  /* ========================================================================
+     12. QUIZ INTERATIVO
+     ======================================================================== */
+  (function initQuiz() {
+    const quizContent = $('#quiz-content');
+    const quizResult = $('#quiz-result');
+    if (!quizContent || !quizResult) return;
+
+    const questionEl = $('#quiz-question');
+    const optionsEl = $('#quiz-options');
+    const feedbackEl = $('#quiz-feedback');
+    const nextBtn = $('#quiz-next');
+    const progressFill = $('#quiz-progress-fill');
+    const progressLabel = $('#quiz-progress-label');
+    const scoreRing = $('#score-ring');
+    const scoreValue = $('#score-value');
+    const resultTitle = $('#result-title');
+    const resultDesc = $('#result-desc');
+    const restartBtn = $('#quiz-restart');
+
+    const QUESTIONS = [
+      {
+        q: 'O que a Inteligência Artificial faz, essencialmente?',
+        options: [
+          'Substitui completamente a inteligência humana em qualquer tarefa.',
+          'Executa tarefas que normalmente exigiriam algum tipo de inteligência humana.',
+          'Cria consciência e sentimentos próprios como os seres humanos.',
+          'Funciona apenas com comandos manuais, sem aprender nada.'
+        ],
+        correct: 1,
+        explanation: 'A IA desenvolve sistemas capazes de executar tarefas que normalmente exigiriam inteligência humana, como aprender com informações e identificar padrões.'
+      },
+      {
+        q: 'Qual é um dos principais pontos positivos da IA no trabalho?',
+        options: [
+          'O aumento da produtividade em tarefas repetitivas.',
+          'A eliminação definitiva de todos os cargos de chefia.',
+          'A redução do acesso à educação.',
+          'O fim da necessidade de comunicação entre as pessoas.'
+        ],
+        correct: 0,
+        explanation: 'Com a IA, tarefas repetitivas podem ser automatizadas, liberando tempo para trabalhos que exigem criatividade, planejamento e decisão.'
+      },
+      {
+        q: 'Sobre a substituição de tarefas pela automação, é correto afirmar:',
+        options: [
+          'Toda profissão que tem alguma tarefa automatizada desaparece.',
+          'A substituição de tarefas não significa necessariamente o fim de uma profissão inteira.',
+          'Nenhuma profissão será afetada pela automação.',
+          'A automação só acontece em países desenvolvidos.'
+        ],
+        correct: 1,
+        explanation: 'Muitas ocupações são formadas por diferentes atividades. Algumas podem ser automatizadas enquanto outras continuam dependendo da participação humana.'
+      },
+      {
+        q: 'Qual destas habilidades tende a ser MAIS valorizada no profissional do futuro?',
+        options: [
+          'Memorização de grandes volumes de informação.',
+          'Execução repetitiva de tarefas padronizadas.',
+          'Pensamento crítico e capacidade de adaptação.',
+          'Evitar qualquer contato com a tecnologia.'
+        ],
+        correct: 2,
+        explanation: 'Criatividade, pensamento crítico, comunicação, empatia e adaptação são competências humanas cada vez mais valorizadas.'
+      },
+      {
+        q: 'Qual é o papel do governo nesse processo de transformação?',
+        options: [
+          'Proibir o uso de Inteligência Artificial em empresas.',
+          'Substituir escolas por sistemas automatizados.',
+          'Ampliar o acesso à educação, à qualificação e à inclusão digital, criando regras de proteção.',
+          'Ignorar o tema, pois é apenas uma questão empresarial.'
+        ],
+        correct: 2,
+        explanation: 'O governo deve desenvolver políticas públicas que ampliem o acesso à educação, à qualificação profissional e à inclusão digital, protegendo direitos e evitando desigualdades.'
+      }
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+    let answered = false;
+
+    function updateProgress() {
+      const pct = ((currentIndex) / QUESTIONS.length) * 100;
+      if (progressFill) progressFill.style.width = pct + '%';
+      if (progressLabel) {
+        progressLabel.textContent = Math.min(currentIndex + 1, QUESTIONS.length) + ' / ' + QUESTIONS.length;
+      }
+    }
+
+    function renderQuestion() {
+      const item = QUESTIONS[currentIndex];
+      answered = false;
+
+      questionEl.textContent = item.q;
+      optionsEl.innerHTML = '';
+      feedbackEl.textContent = '';
+      nextBtn.disabled = true;
+      nextBtn.innerHTML = (currentIndex === QUESTIONS.length - 1)
+        ? 'Ver resultado <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+        : 'Próxima <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+
+      const letters = ['A', 'B', 'C', 'D'];
+
+      item.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.type = 'button';
+        btn.innerHTML = `<span class="letter">${letters[i]}</span><span>${opt}</span>`;
+        btn.addEventListener('click', () => handleAnswer(i, btn));
+        optionsEl.appendChild(btn);
+      });
+
+      updateProgress();
+    }
+
+    function handleAnswer(index, btn) {
+      if (answered) return;
+      answered = true;
+
+      const item = QUESTIONS[currentIndex];
+      const allBtns = $$('.quiz-option', optionsEl);
+
+      allBtns.forEach(b => b.disabled = true);
+
+      if (index === item.correct) {
+        btn.classList.add('correct');
+        score++;
+        feedbackEl.textContent = '✔ Correto! ' + item.explanation;
+        feedbackEl.style.color = 'var(--c-success)';
+      } else {
+        btn.classList.add('wrong');
+        allBtns[item.correct].classList.add('correct');
+        feedbackEl.textContent = '✘ Não foi essa. ' + item.explanation;
+        feedbackEl.style.color = 'var(--c-danger)';
+      }
+
+      nextBtn.disabled = false;
+    }
+
+    function nextQuestion() {
+      if (!answered) return;
+
+      if (currentIndex < QUESTIONS.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      quizContent.style.display = 'none';
+      quizResult.style.display = 'block';
+
+      const pct = Math.round((score / QUESTIONS.length) * 100);
+      const degrees = (pct / 100) * 360;
+
+      scoreValue.textContent = score + '/' + QUESTIONS.length;
+
+      scoreRing.style.background =
+        `conic-gradient(var(--c-primary) 0deg, var(--c-secondary) ${degrees}deg, var(--c-surface-2) ${degrees}deg)`;
+
+      if (pct === 100) {
+        resultTitle.textContent = 'Perfeito! 🎯';
+        resultDesc.textContent = 'Você domina os principais conceitos sobre Inteligência Artificial e o futuro do trabalho. Agora é compartilhar esse conhecimento!';
+      } else if (pct >= 60) {
+        resultTitle.textContent = 'Muito bem! 👏';
+        resultDesc.textContent = 'Você compreendeu a maior parte do conteúdo. Reveja os capítulos sobre ameaças e responsabilidades para consolidar ainda mais o aprendizado.';
+      } else {
+        resultTitle.textContent = 'Continue estudando 📚';
+        resultDesc.textContent = 'Vale a pena revisitar o conteúdo com calma. A discussão sobre IA e trabalho é complexa e cheia de nuances importantes.';
+      }
+    }
+
+    function restart() {
+      currentIndex = 0;
+      score = 0;
+      quizContent.style.display = 'block';
+      quizResult.style.display = 'none';
+      scoreRing.style.background = 'var(--c-surface-2)';
+      renderQuestion();
+    }
+
+    nextBtn.addEventListener('click', nextQuestion);
+    if (restartBtn) restartBtn.addEventListener('click', restart);
+
+    renderQuestion();
+  })();
+
+  /* ========================================================================
+     13. GRÁFICO EM CANVAS
+     ======================================================================== */
+  (function initCharts() {
+    const canvas = $('#chart-percepcao');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    const DATA = [
+      { label: 'Jovens',        oportunidade: 72, neutro: 16, ameaca: 12 },
+      { label: 'Prof. TI',      oportunidade: 81, neutro: 12, ameaca: 7  },
+      { label: 'Indústria',     oportunidade: 54, neutro: 21, ameaca: 25 },
+      { label: 'Comércio',      oportunidade: 48, neutro: 24, ameaca: 28 },
+      { label: 'Educação',      oportunidade: 64, neutro: 20, ameaca: 16 },
+      { label: 'Saúde',         oportunidade: 59, neutro: 23, ameaca: 18 }
+    ];
+
+    function getColors() {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      return {
+        oportunidade: isLight ? '#0aa06a' : '#2ce08a',
+        neutro:       isLight ? '#d18a00' : '#ffb020',
+        ameaca:       isLight ? '#d63030' : '#ff5252',
+        text:         isLight ? '#3c4a63' : '#b3c0d8',
+        grid:         isLight ? 'rgba(10,20,45,0.08)' : 'rgba(255,255,255,0.08)'
+      };
+    }
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      draw(rect.width, rect.height);
+    }
+
+    function draw(w, h) {
+      const colors = getColors();
+      ctx.clearRect(0, 0, w, h);
+
+      const padding = { top: 18, right: 14, bottom: 42, left: 42 };
+      const chartW = w - padding.left - padding.right;
+      const chartH = h - padding.top - padding.bottom;
+
+      // Grade horizontal
+      ctx.strokeStyle = colors.grid;
+      ctx.lineWidth = 1;
+      ctx.font = '11px "JetBrains Mono", monospace';
+      ctx.fillStyle = colors.text;
+
+      for (let i = 0; i <= 4; i++) {
+        const y = padding.top + (chartH / 4) * i;
+        ctx.beginPath();
+        ctx.moveTo(padding.left, y);
+        ctx.lineTo(padding.left + chartW, y);
+        ctx.stroke();
+
+        const value = 100 - (i * 25);
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(value + '%', padding.left - 9, y);
+      }
+
+      // Barras agrupadas
+      const groupCount = DATA.length;
+      const groupWidth = chartW / groupCount;
+      const barWidth = Math.min(groupWidth / 3.9, 22);
+      const gap = 5;
+
+      DATA.forEach((d, i) => {
+        const groupCenter = padding.left + groupWidth * i + groupWidth / 2;
+        const values = [
+          { v: d.oportunidade, c: colors.oportunidade },
+          { v: d.neutro,       c: colors.neutro },
+          { v: d.ameaca,       c: colors.ameaca }
+        ];
+
+        const totalWidth = (barWidth * 3) + (gap * 2);
+        let startX = groupCenter - totalWidth / 2;
+
+        values.forEach(item => {
+          const barH = (item.v / 100) * chartH;
+          const x = startX;
+          const y = padding.top + chartH - barH;
+
+          // Sombra suave
+          ctx.fillStyle = item.c;
+          ctx.globalAlpha = 0.92;
+          roundRect(ctx, x, y, barWidth, barH, 4);
+          ctx.fill();
+          ctx.globalAlpha = 1;
+
+          startX += barWidth + gap;
+        });
+
+        // Rótulo
+        ctx.fillStyle = colors.text;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.font = '11px "Inter", sans-serif';
+        ctx.fillText(d.label, groupCenter, padding.top + chartH + 12);
+      });
+    }
+
+    function roundRect(context, x, y, width, height, radius) {
+      const r = Math.min(radius, width / 2, height / 2);
+      context.beginPath();
+      context.moveTo(x + r, y);
+      context.lineTo(x + width - r, y);
+      context.quadraticCurveTo(x + width, y, x + width, y + r);
+      context.lineTo(x + width, y + height - r);
+      context.quadraticCurveTo(x + width, y + height, x + width - r, y + height);
+      context.lineTo(x + r, y + height);
+      context.quadraticCurveTo(x, y + height, x, y + height - r);
+      context.lineTo(x, y + r);
+      context.quadraticCurveTo(x, y, x + r, y);
+      context.closePath();
+    }
+
+    resize();
+
+    let rt;
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      rt = setTimeout(resize, 200);
+    });
+
+    window.addEventListener('site:themechange', resize);
+
+    // Redesenha ao entrar em foco
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            resize();
+          }
+        });
+      }, { threshold: 0.2 });
+      io.observe(canvas);
+    }
+  })();
+
+  /* ========================================================================
+     14. PARALLAX SUAVE NO HERO
+     ======================================================================== */
+  (function initParallax() {
+    if (prefersReducedMotion) return;
+
+    const heroImg = $('.hero-bg img');
+    const orb = $('.hero-orb');
+    if (!heroImg) return;
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < window.innerHeight * 1.2) {
+          heroImg.style.transform = `scale(1.06) translateY(${y * 0.12}px)`;
+          if (orb) orb.style.transform = `translateY(${y * 0.06}px)`;
+        }
+        ticking = false;
+      });
+    }, { passive: true });
+  })();
+
+  /* ========================================================================
+     15. TICKER: DUPLICAÇÃO PARA LOOP CONTÍNUO
+     ======================================================================== */
+  (function initTicker() {
+    const track = $('#ticker-track');
+    if (!track) return;
+
+    const clone = track.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.removeAttribute('id');
+    track.parentElement.appendChild(clone);
+  })();
+
+  /* ========================================================================
+     16. ANO NO FOOTER
+     ======================================================================== */
+  (function initYear() {
+    const el = $('#year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+
+  /* ========================================================================
+     17. SCROLL SUAVE PARA LINKS INTERNOS (fallback)
+     ======================================================================== */
+  (function initSmoothScroll() {
+    $$('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        e.preventDefault();
+
+        const navHeight = 84;
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+
+        window.scrollTo({
+          top: top < 0 ? 0 : top,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+      });
+    });
+  })();
+
+  /* ========================================================================
+     18. EFEITO DE TILT NOS CARDS (DESKTOP)
+     ======================================================================== */
+  (function initTilt() {
+    if (prefersReducedMotion) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+    if (window.innerWidth < 1000) return;
+
+    const cards = $$('.opp-card, .skill-card, .resp-card');
+
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -3.2;
+        const rotateY = ((x - centerX) / centerX) * 3.2;
+
+        card.style.transform =
+          `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  })();
+
+  /* ========================================================================
+     19. HIGHLIGHT DO LINK ATIVO NA NAVEGAÇÃO
+     ======================================================================== */
+  (function initActiveLink() {
+    const links = $$('#nav-links a');
+    const sections = links
+      .map(l => document.querySelector(l.getAttribute('href')))
+      .filter(Boolean);
+
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = links.find(l => l.getAttribute('href') === '#' + entry.target.id);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, {
+      rootMargin: '-45% 0px -50% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(s => observer.observe(s));
+  })();
+
+  /* ========================================================================
+     20. EASTER EGG: KONAMI CODE
+     ======================================================================== */
+  (function initEasterEgg() {
+    const sequence = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight'];
+    let pos = 0;
+
+    document.addEventListener('keydown', e => {
+      if (e.key === sequence[pos]) {
+        pos++;
+        if (pos === sequence.length) {
+          pos = 0;
+          document.body.style.transition = 'filter 0.6s ease';
+          document.body.style.filter = 'hue-rotate(180deg)';
+          setTimeout(() => {
+            document.body.style.filter = '';
+          }, 1600);
+        }
+      } else {
+        pos = 0;
+      }
+    });
+  })();
+
+  /* ========================================================================
+     21. LOG DE BOAS-VINDAS
+     ======================================================================== */
+  console.log(
+    '%c IA & Trabalho ',
+    'background: linear-gradient(135deg,#00d4ff,#7c5cff); color:#04121c; font-weight:700; padding:6px 14px; border-radius:8px; font-size:14px;'
+  );
+  console.log(
+    '%cProjeto educativo sobre Inteligência Artificial no mercado de trabalho.\nO grande desafio do futuro não é competir com as máquinas, mas ampliar as capacidades humanas.',
+    'color:#00d4ff; font-size:12px; line-height:1.7;'
+  );
+
+})();
+</script>
+</body>
+</html>
